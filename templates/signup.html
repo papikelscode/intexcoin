@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Bibase | Sign up</title>
+</head>
+<body>
+
+    {% include "nav.html" %}
+
+
+    <!-- <div class="container">
+        <div class="box">
+            <div class="columns">
+                <div class="column">
+
+                </div>
+
+                <div class="column">
+
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+    <div class="container section2">
+       <div class="card">
+           <div class="columns">
+                <div class="column">
+                    <img  src="static/assets/imgs/illu/hero.svg" alt="" srcset="">
+                </div>
+
+                <div class="column">
+                    <div class="logincontiner">
+                        <div class="logologin">               
+                             <i class='bx bxl-bitcoin' ></i> <h1 class="title">247cryptocurrency</h1>
+                        </div>
+
+                        <div style="display: none;" id="notification" class="notification is-primary">
+                            <button class="delete"></button>
+                            <p id="alertmsg"></p>
+                          </div>
+                    <div class="formcontainer">
+                        <div class="inputconatiner">
+                            <i class='bx bx-user' ></i>
+                            <input type="text" id="fname" placeholder="Fullname">
+                        </div>
+                        <div class="inputconatiner">
+                            <i class='bx bx-envelope'></i>
+                            <input type="text" id="email" placeholder="Email">
+                        </div>
+                        <div class="inputconatiner">
+                            <i class='bx bx-user' ></i>
+                            <input type="text" id="username" placeholder="Username">
+                        </div>
+                        <div class="inputconatiner">
+                            <i class='bx bx-hide'></i>
+                            <input type="password" id="password" placeholder="Password">
+                        </div>
+                    </div>
+        
+                    <div class="actionbtns">
+                        <a onclick="Signup()" class="button signinbtn">Sign Up
+                            <i class='bx bx-right-arrow-alt' id="arrow" ></i>
+                            <i class='bx bx-loader-alt bx-spin bx-rotate-90' style="display: none;" id="spin"></i>
+                        </a>
+                    </div>
+        
+                    <div class="links">
+                        <a href="/forgot">Forgot your password </a>
+                        <a href="/signin">Already have an account ? Sign in</a>
+                    </div>
+                </div>
+                </div>
+           </div>
+       </div>
+    </div>
+
+    {% include "chat.html" %}
+
+    <script src="{{url_for("static",filename='assets/js/axios.min.js')}}"></script>
+    <script src="{{url_for("static",filename='assets/js/auth.js')}}"></script>
+    <script src="static/assets/js/custom.js"></script>
+
+
+</body>
+</html>

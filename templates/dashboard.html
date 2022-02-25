@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/assets/css/style.css">
+    <link rel="stylesheet" href="static/assets/js/table/jstable.css">
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://unpkg.com/dropzone@5/dist/min/dropzone.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/dropzone@5/dist/min/dropzone.min.css" type="text/css" />
+    <title>Intexcoin | Home</title>
+    <style>
+      :root {
+  --modal-duration: 1s;
+  --modal-color:  #070d2b;
+}
+.tradbtn{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5rem;
+}
+.buttony{
+font-size: 25px;
+background: var(--modal-color);
+color: #fff;
+text-transform: uppercase;
+padding: 10px;
+margin-top: 10px;
+width: 30%;
+box-shadow: 0px 0px 15px 0px #f2f5f3ad;
+
+}
+    .buttonx , .buttonxy{
+font-size: 25px;
+background: #26de81;
+color: #fff;
+text-transform: uppercase;
+padding: 10px;
+margin-top: 10px;
+width: 30%;
+box-shadow: 0px 0px 15px 0px #26de81ad;
+}
+.buttonxy{
+  background-color: red;
+}
+ .buttonx:hover {
+  background: whitesmoke;
+  color: black;
+}
+.buttonxy:hover{
+  background-color: whitesmoke;
+  color: #000;
+}
+.call {
+  display: none;
+  position: fixed;
+  
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.call-content {
+  margin: 10% auto;
+  width: 60%;
+  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.17);
+  animation-name: modalopen;
+  animation-duration: var(--modal-duration);
+  background-color: whitesmoke;
+}
+
+.call-header h2,
+.call-footer h3 {
+  margin: 0;
+}
+
+.call-header {
+  background: var(--modal-color);
+  padding: 15px;
+  color: #fff;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+.call-body{
+  background-color: whitesmoke;
+}
+.call-body  p {
+ 
+  font-size: 25px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+  ;
+margin-bottom: 2rem;
+background-color: #fff;
+
+}
+
+label{
+  font-size: 35px;
+  font-family: 'Times New Roman', Times, serif;
+}
+input{
+  margin-top: 1rem;
+  font-size: 20px;
+  width: 30rem;
+  height: 2rem;
+
+}
+.row{
+    display: flex;
+    flex-direction: row;
+}
+.column{
+    flex-basis: 0;
+  flex-grow: 1;
+  flex-shrink: 3;
+  padding: 0.75em;
+}
+
+.call-footer {
+  background: var(--modal-color);
+  padding: 10px;
+  color: #fff;
+  text-align: center;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.close{
+  color: #ccc;
+  float: right;
+  font-size: 30px;
+  color: #fff;
+}
+.closex {
+  color: #ccc;
+  float: right;
+  font-size: 30px;
+  color: #fff;
+}
+/* .closex,.closex:hover,
+.closex, .closex:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+.close,.close:hover,
+.close, .close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+} */
+ .btnn{
+  text-decoration: none;
+  color: whitesmoke;
+} 
+.selectx{
+  margin-top: 1rem;
+  font-size: 20px;
+  width: 30rem;
+  height: 2rem;
+}
+
+@keyframes modalopen {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+  @media only screen and (max-width:640px){
+    .call{
+      left: -50%;
+  margin-top: 1rem;
+  padding-bottom: 20%;
+  height: 100%;
+  width: 200%;
+  overflow: auto;
+    }
+    .call-content{
+      width: 50%;
+      
+    }
+    input{
+      width:10rem;
+    }
+    .selectx{
+      width: 10rem;
+    }
+    label{
+      font-size: 20px;
+    }
+    .row{
+    display: flex;
+    flex-direction: column;
+}
+.buttony{
+  height: 3.5rem;
+  width: 55%;
+}
+.buttonx{
+  height: 3rem;
+  width: 35%;
+}
+.buttonxy{
+  height: 3rem;
+  width: 35%;
+}
+option{
+  width: 15%;
+  font-size: 15px;
+}
+  }
+
+
+</style>
+</head>
+<body>
+    {% include "sidebar.html" %}
+    
+   {% include "header.html" %}
+   
+
+    <div class="body-container">
+    
+    
+        <div class="container">
+          <div class="trad">
+            <script defer src="https://www.livecoinwatch.com/static/lcw-widget.js"></script> <div class="livecoinwatch-widget-5" lcw-base="USD" lcw-color-tx="#999999" lcw-marquee-1="coins" lcw-marquee-2="movers" lcw-marquee-items="10" ></div>
+           </div>
+          <div class="columns">
+
+            <div class="column">
+                <div style="height: 10rem; padding: .75rem;"  class="card">
+                  <div class="container">
+                      <div style="display: none;" id="notificationj" class="notification is-primary">
+                                <button class="delete"></button>
+                                <p id="alertmsgjljknk123"></p>
+                        </div>
+                  
+                    <h4 style="text-align: center;" class="title">
+                      ${{current_user.profit}}
+                    </h4>
+                    <p style="text-align: center;" class="subtitle">profit</p>
+
+                    <button onclick="Withdraw()"  style="width: 100%;" class="button signinbtn" >Withdraw
+                    
+                      <i class='bx bx-money' id="arrowj"></i>
+                  <i class='bx bx-loader-alt bx-spin bx-rotate-90' style="display: none;" id="spinj"></i>
+                    </button>
+                  </div>
+
+                  </div>
+            </div>
+
+            <div class="column">
+              <div style="height: 10rem; padding: .75rem;" class="card">
+                <div class="container">
+                  <h4 style="text-align: center;" class="title">
+                    ${{current_user.balance}}
+                  </h4>
+                  <p style="text-align: center;" class="subtitle">Balance</p>
+                  <button onclick="Modal('fundwallet')" style="width: 100%;" class="button signinbtn">
+                  Deposit
+                  </button>
+
+                </div>
+              </div>
+           </div>
+
+           <div class="column">
+            <div style="height: 10rem; padding: .75rem;"  class="card">
+              <div class="container">
+                <h4 style="text-align: center;"  class="title">
+                  {{total}}
+                </h4>
+                <p style="text-align: center;" class="subtitle">Total Balance</p>
+              </div>
+            </div>
+        </div>
+
+
+
+          </div>
+        </div>
+
+
+
+
+
+
+        
+        <div class="container">
+            <div class="columns multiline">
+              
+              {% for plan in userplan  %}
+
+                <div class="column">
+                  <div class="card">
+                    <header class="card-header">
+                      <p class="card-header-title">
+                        
+                        {{plan.plan}} (Active) ${{plan.plan_price}}
+
+                      </p>
+                      <a href="#" class="card-header-icon" aria-label="more options">
+                        <span class="icon">
+                          <i class="fas fa-angle-down" aria-hidden="true"></i>
+                        </span>
+                      </a>
+                    </header>
+                  
+
+                      <div class="bitcoin-container">
+                          <!-- TradingView Widget BEGIN-->
+ <div class="tradingview-widget-container">
+  <div id="tradingview_e1cb6"></div>
+  <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/symbols/BTCUSDT/?exchange=BINANCE" rel="noopener" target="_blank"><span class="blue-text"></div>
+  <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+  <script type="text/javascript">
+  new TradingView.widget(
+  {
+  "width": 980,
+  "height": 610,
+  "symbol": "BINANCE:BTCUSDT",
+  "interval": "D",
+  "timezone": "Etc/UTC",
+  "theme": "light",
+  "style": "1",
+  "locale": "en",
+  "toolbar_bg": "#f1f3f6",
+  "enable_publishing": false,
+  "hide_side_toolbar": false,
+  "allow_symbol_change": true,
+  "watchlist": [
+    "BINANCE:BTCUSDT",
+    "BITSTAMP:BTCUSD",
+    "COINBASE:BTCUSD",
+    "BINANCE:ETHUSDT",
+    "BINANCE:GRTUSDT"
+  ],
+  "details": true,
+  "hotlist": true,
+  "studies": [
+    "chandeMO@tv-basicstudies",
+    "DetrendedPriceOscillator@tv-basicstudies",
+    "DM@tv-basicstudies"
+  ],
+  "container_id": "tradingview_e1cb6"
+}
+  );
+  </script>
+</div>
+<!--TradingView Widget END -->
+
+                      </div>
+                      <!-- <div class="tradingview-widget-container">
+                        <div id="tradingview_e4394"><div id="tradingview_7e8c3-wrapper" style="position: relative;box-sizing: content-box;width: 100%;height: 490px;margin: 0 auto !important;padding: 0 !important;font-family:Arial,sans-serif;"><div style="width: 100%;height: 490px;background: transparent;padding: 0 !important;"><iframe id="tradingview_7e8c3" src="https://s.tradingview.com/widgetembed/?frameElementId=tradingview_7e8c3&amp;symbol=BITSTAMP%3ABTCUSD&amp;interval=D&amp;symboledit=1&amp;saveimage=1&amp;toolbarbg=f1f3f6&amp;studies=%5B%5D&amp;theme=light&amp;style=3&amp;timezone=Etc%2FUTC&amp;studies_overrides=%7B%7D&amp;overrides=%7B%7D&amp;enabled_features=%5B%5D&amp;disabled_features=%5B%5D&amp;locale=en&amp;utm_source=ap.bitdelta.net&amp;utm_medium=widget&amp;utm_campaign=chart&amp;utm_term=BITSTAMP%3ABTCUSD" style="width: 100%; height: 100%; margin: 0 !important; padding: 0 !important;" frameborder="0" allowtransparency="true" scrolling="no" allowfullscreen=""></iframe></div></div></div>
+                        
+                        <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+                        <script type="text/javascript">
+                        new TradingView.widget(
+                        {
+                        "width": '100%',
+                        "height": 490,
+                        "symbol": "BITSTAMP:BTCUSD",
+                        "interval": "D",
+                        "timezone": "Etc/UTC",
+                        "theme": "light",
+                        "style": "3",
+                        "locale": "en",
+                        "toolbar_bg": "#f1f3f6",
+                        "enable_publishing": false,
+                        "allow_symbol_change": true,
+                        "container_id": "tradingview_e4394"
+                      }
+                        );
+                        </script>
+                      </div>
+                      </div> -->
+                      <!-- <script defer src="https://www.livecoinwatch.com/static/lcw-widget.js"></script> <div class="livecoinwatch-widget-1" lcw-coin="BTC" lcw-base="USD" lcw-color-tx="#ffffff" lcw-color-pr="#58c7c5" lcw-color-bg="#1f2434" lcw-border-w="1" ></div> -->
+
+
+                      <footer class="card-footer">
+                        <a href="#" class="card-footer-item"><strong>ROI: ${{plan.plan_roi}}%</strong> </a>
+                        <a href="#" class="card-footer-item">Rate: {{plan.plan_rate}} days</a>
+                        
+                      </footer>
+                      <div class="tradbtn">
+                        <button class="buttonx" id="call-btn" onclick="callModal();">CALL
+                          <i class='bx bx-money' id="arrowj"></i>
+                          <i class='bx bx-loader-alt bx-spin bx-rotate-90' style="display: none;" id="spinj"></i>
+                        </button>
+                        <button class="buttonxy" id="put-btn" onclick="putModal();">PUT
+                          <i class='bx bx-money' id="arrowj"></i>
+                          <i class='bx bx-loader-alt bx-spin bx-rotate-90' style="display: none;" id="spinj"></i>
+                        </button>
+                      </div>
+
+                      <div id="call-modal" class="call">
+                        <div class="call-content">
+                          <div class="call-header">
+                            <span class="close">&times;</span>
+                            <h2>Do you want to place a CALL on this trade??</h2>
+                          </div>
+                          <div class="call-body">
+                            <div class="row">
+                              <div class="column">
+                                <img src="static/assets/imgs/wallet.svg" alt="" srcset="">
+                              </div>
+                              <div class="column">
+                                <form action="">
+                                  <h4>
+                                    Account Balance:    ${{total}}
+                                  </h4>
+                                  <h4>
+                                    Plan Package: <strong> {{plan.plan}} </strong>
+                                  </h4>
+                               
+                                  
+                                  <select class="selectx" name="" id="">
+                                    <option value="">Market type</option>
+                                  </select>
+                                  <select class="selectx" name="" id="">
+                                    <option value="">select market</option>
+                                  </select>
+
+                                  <select class="selectx" name="" id="" aria-placeholder="">
+                                    <option value="">---Long/Short Positions---</option>
+                                    <option value="">1 min</option>
+                                    <option value="">2 min</option>
+                                    <option value="">3 min</option>
+                                    <option value="">5 min</option>
+                                    <option value="">1 hour</option>
+                                    <option value="">2 hour</option>
+                                    <option value="">4 hour</option>
+                                    <option value="">5 hour</option>
+                                    <option value="">1 day</option>  
+                                    <option value="">2 day</option>
+                                  </select>
+                                  <input type="text" placeholder="Order Rate (Amount)">
+
+                                  <button class="buttony" onclick="page()" > <a class="btnn"  href="call.html">Submit</a> 
+                                    <i class='bx bx-money' id="arrowj"></i>
+                          <i class='bx bx-loader-alt bx-spin bx-rotate-90' style="display: none;" id="spinj"></i>
+                                  </button>
+                                </form>
+                              </div>
+                            </div>
+                            
+                          </div>
+                          <div class="call-footer">
+                            <h3>Intexcoin</h3>
+                          </div>
+                        </div>
+                      </div>
+                      <div id="put-modal" class="call">
+                        <div class="call-content">
+                          <div class="call-header">
+                            <span class="closex">&times;</span>
+                            <h2>Do you want to place a PUT on this trade???</h2>
+                          </div>
+                          <div class="call-body">
+                            <div class="row">
+                              <div class="column">
+                                <img src="static/assets/imgs/wallet.svg" alt="" srcset="">
+                              </div>
+                              <div class="column">
+                                <form action="">
+                                  <h4>
+                                    Account Balance:    ${{total}}
+                                  </h4>
+                                  <h4>
+                                    Plan Package: <strong> {{plan.plan}} </strong>
+                                  </h4>
+                                  <select onchange="GetMarket()" class="selectx" name="" id="mkt">
+                                    <option value="">Market type</option>
+                                  </select>
+                                  <select class="selectx" name="" id="mktype">
+                                    <option value="">select market</option>
+                                  </select>
+
+                                  <select class="selectx" name="" id="" aria-placeholder="">
+                                    <option value="">---Long/Short Positions---</option>
+                                    <option value="">1 min</option>
+                                    <option value="">2 min</option>
+                                    <option value="">3 min</option>
+                                    <option value="">5 min</option>
+                                    <option value="">1 hour</option>
+                                    <option value="">2 hour</option>
+                                    <option value="">4 hour</option>
+                                    <option value="">5 hour</option>
+                                    <option value="">1 day</option>  
+                                    <option value="">2 day</option>
+                                  </select>
+                                  <input type="text" placeholder="Order Rate (Amount)">
+
+                                  <button class="buttony" onclick="page()" > <a class="btnn"  href="call.html">Submit</a> 
+                                    <i class='bx bx-money' id="arrowj"></i>
+                          <i class='bx bx-loader-alt bx-spin bx-rotate-90' style="display: none;" id="spinj"></i>
+                                  </button>
+                                </form>
+                              </div>
+                            </div>
+                            
+                          </div>
+                          <div class="call-footer">
+                            <h3>Intexcoin</h3>
+                          </div>
+                        </div>
+                      </div>
+                     
+<!--                       
+                      <div id="put-modal" class="call">
+                        <div class="call-content">
+                          <div class="call-header">
+                            <span class="closex">&times;</span>
+                            <h2>Do you want to place a PUT on this trade??</h2>
+                          </div>
+                          <div class="call-body">
+                            <div class="row">
+                              <div class="column">
+                                <img src="static/assets/imgs/wallet.svg" alt="" srcset="">
+                              </div>
+                              <div class="column">
+                                <form action="">
+                            
+                                  <select class="selectx" name="" id="">
+                                    <option value="">Market type</option>
+                                  </select>
+                                  <select class="selectx" name="" id="">
+                                    <option value="">select market</option>
+                                  </select>
+
+                                  <select class="selectx" name="" id="" aria-placeholder="">
+                                    <option value="">---Long/Short Positions---</option>
+                                    <option value="">1 min</option>
+                                    <option value="">2 min</option>
+                                    <option value="">3 min</option>
+                                    <option value="">5 min</option>
+                                    <option value="">1 hour</option>
+                                    <option value="">2 hour</option>
+                                    <option value="">4 hour</option>
+                                    <option value="">5 hour</option>
+                                    <option value="">1 day</option>  
+                                    <option value="">2 day</option>
+                                  </select>
+                                  <input type="text" placeholder="Order Rate (Amount)">
+                                  <button class="buttony" onclick="page()"><a class="btnn"  href="call.html">Submit</a>
+                                    <i class='bx bx-money' id="arrowj"></i>
+                          <i class='bx bx-loader-alt bx-spin bx-rotate-90' style="display: none;" id="spinj"></i>
+                                  </button>
+                                </form>
+                              </div>
+                            </div>
+                            
+                          </div>
+                          <div class="call-footer">
+                            <h3>Intexcoin</h3>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+   -->
+                  
+                  </div>
+
+                 </div>
+
+                 {% else %}
+
+                 <div class="column">
+                  <div class="card" onclick="Modal('modal')">
+                    <div class="container">
+                      <div class="choose">
+                        <i class='bx bx-layer-plus bx-fade-up' ></i>                 
+                        <h4>Choose one more from our investment plan</h4>
+                      </div>
+                      </div>
+                  </div>
+  
+                 </div>
+
+              </div>
+              {% endfor %}
+
+              
+
+
+                
+
+            
+
+                
+
+            </div>
+            <h3 class="title center">Transaction history</h3>
+            <table id="basic">
+              <thead>
+                  <tr>
+                      <th>Description</th>
+                      <th>Transaction type</th>
+                      <th>Amount</th>
+                      <th>Timestamp</th>
+                  </tr>
+              </thead>
+              <tbody>
+              {% for tx  in txs %}
+
+                <tr>
+                      <td>{{tx.description}}</td>
+                      <td>{{tx.txtype}}</td>
+                      {% if tx.cost %}
+                        <td>$ {{tx.cost}}</td>
+                      {% else %}
+                      <td>Not availaible</td>
+                      {% endif %}
+                      <td>{{tx.timestamp}}</td>
+                  </tr>
+              
+              {% endfor %}
+                  
+              </tbody>
+           </table>
+          
+        </div>
+
+    </div>
+
+
+
+
+
+    
+
+    {% include "walletmodal.html" %}
+
+<script>
+  function callModal(){
+     // Get DOM Elements
+const modal = document.querySelector('#call-modal');
+const modalBtn = document.querySelector('#call-btn');
+const closeBtn = document.querySelector('.close');
+
+// Events
+modalBtn.addEventListener('click', openModal);
+closeBtn.addEventListener('click', closeModal);
+window.addEventListener('click', outsideClick);
+
+// Open
+function openModal() {
+  modal.style.display = 'block';
+}
+// Close
+function closeModal() {
+  modal.style.display = 'none';
+}
+
+// Close If Outside Click
+function outsideClick(e) {
+  if (e.target == modal) {
+    modal.style.display = 'none';
+  }
+}
+}
+
+function putModal(){
+       // Get DOM Elements
+const modal = document.querySelector('#put-modal');
+const modalBtn = document.querySelector('#put-btn');
+const closeBtn = document.querySelector('.closex');
+
+// Events
+modalBtn.addEventListener('click', openModal);
+closeBtn.addEventListener('click', closeModal);
+window.addEventListener('click', outsideClick);
+
+// Open
+function openModal() {
+  modal.style.display = 'block';
+}
+// Close
+function closeModal() {
+  modal.style.display = 'none';
+}
+
+// Close If Outside Click
+function outsideClick(e) {
+  if (e.target == modal) {
+    modal.style.display = 'none';
+  }
+}
+}
+
+
+
+
+</script>
+
+    
+    <script src="static/assets/js/table/jstable.min.js"></script>
+    <script src="{{url_for("static",filename='assets/js/axios.min.js')}}"></script>
+    <script src="static/assets/js/dashboard.js"></script>
+    <script src="static/assets/js/custom.js"></script>
+    <script>
+      function Total(x,y){
+        console.log("oi",x,y);
+        var label = document.getElementById('total')
+        label.innerText ='$'+x+y
+      }
+    </script>
+
+</body>
+</html>

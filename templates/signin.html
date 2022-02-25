@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>247crypto | Signin</title>
+</head>
+<body>    
+{% include "nav.html" %}
+
+
+
+    <div class="container section2">
+        <div class="logincontiner card">
+                <div class="logologin">               
+                     <i class='bx bxl-bitcoin' ></i> <h1 class="title">247cryptocurrency</h1>
+                </div>
+
+                <div style="display: none;" id="notification" class="notification is-primary">
+                    <button class="delete"></button>
+                    <p id="alertmsg"></p>
+                  </div>
+
+            <div class="formcontainer">
+                <div class="inputconatiner">
+                    <i class='bx bx-user' ></i>
+                    <input id="username" type="text" placeholder="Email or Username">
+                </div>
+                <div class="inputconatiner">
+                    <i class='bx bx-hide'></i>
+                    <input id="password" type="password" placeholder="password">
+                </div>
+            </div>
+
+            <div class="actionbtns">
+                <a onclick="Signin()" class="button signinbtn">Sign in
+                    <i class='bx bx-right-arrow-alt' id="arrow" ></i>
+                    <i class='bx bx-loader-alt bx-spin bx-rotate-90' style="display: none;" id="spin"></i>                </a>
+            </div>
+
+            <div class="links">
+                <a href="/forgot">Forgot your password </a>
+                <a href="/signup">New to 247crypto Sign up here</a>
+            </div>
+        </div>
+    </div>
+
+
+    {% include "chat.html" %}
+
+    
+    <script src="{{url_for("static",filename='assets/js/axios.min.js')}}"></script>
+    <script src="{{url_for("static",filename='assets/js/auth.js')}}"></script>
+    <script src="static/assets/js/custom.js"></script>
+
+    
+    </body>
+
+</html>

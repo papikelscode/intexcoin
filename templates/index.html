@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/assets/css/style.css">
+    <link rel="stylesheet" href="static/assets/css/main.css">
+    <link rel="stylesheet" href="static/assets/css/bulma.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <title>Intexcoin | Home</title>
+    <style>
+      
+      .middle-section{
+  margin-left: 10%;
+}
+.middle-section .ways{
+  font-size: 40px;
+  text-align: center;
+  color:navy;
+  font-weight: 600;
+  margin-top: 40px;
+  font-family: 'alice', display;
+}
+.icon{
+  width: 30px;
+  height: 30px;
+  background-color: blue;
+  color: whitesmoke;
+  border-radius: 100%;
+  font-size: 20px;
+  margin-bottom: 5%;
+}
+.middle-section img{
+  width: 200px;
+  margin-bottom:5% ;
+  
+}
+.convert{
+    margin-top: 5%;
+    margin-left: 11%;
+    margin-right: 10%;
+    z-index: 2;
+    width: 80%;
+    height: 27rem;
+    background-color: var(--background-color);
+    box-shadow: 0 4px 10px;
+  
+   
+  }
+.middle-section h2{
+  font-family: 'blackopps', display;
+  font-size: 35px;
+  color: black;
+  font-weight: 300;
+  font-stretch: extra-expanded;
+
+}
+.middle-section h3{
+    font-family: 'Candal', sans-serif;
+    color: #000;
+    
+}
+#content-icon{
+  width: 10px;
+}
+
+@media only screen and (max-width:960px){
+.ways{
+  font-size: 20px;
+}
+.foto-img{
+  width: 3rem;
+}
+.row{
+  flex-direction: column;
+}
+.middle-section{
+  margin-left: 15%;
+}
+.middle-section h1{
+  margin-right: 20%;
+}
+#content-icon{
+  display: none;
+}
+#row{
+  flex-direction: column;
+}
+section .card{
+  width: auto;
+  margin-left: auto;
+}
+.step{
+  width: 35%;
+  font-size: 20px;
+}
+}
+
+    </style>
+</head>
+<body>
+    {% include "nav.html" %}
+<!-- 
+    <div class="preloader" id="preloader">
+
+      <div class="progress__container">
+        <center>
+          <h4 id="progress_label">
+            0%
+          </h4>
+          <progress id="progress" class="progress is-small" value="0" max="100">20%</progress>
+          
+        </center>
+      </div>
+    </div>  -->
+  
+
+    <section class="hero banner is-medium">
+
+        <div id="particles-js"></div>
+
+      <div class="hero-body">
+
+
+        <div class="container">
+          <div class="columns">
+              <div class="column " >
+                  <h1 style="color: whitesmoke;" class="title textwhite animate__animated animate__bounce">
+                    SECURE INVESTMENTS ARE REAL
+                    IN OUR COMPANY!
+                  </h1>
+                  <p class="textwhite">
+                    We’re reinventing the global equity blockchian
+                    Looking for highest returns on your investments?
+                    Intexcoin is made so even investors with zero trading experience are successfully making a profit. Our program, unlike any other, guarantees fix hourly interest for investors regardless of market conditions.
+                  </p>
+                  <br>
+                  {% if current_user.is_authenticated %}
+                    <div class="calltoaction">
+                      <a href="/dashboard" class="button learnmore">Dashboard</a>
+                      <a href="/logout" class="button investnow">Logout</a>
+                    </div>
+                {% else %}
+                    <div class="calltoaction">
+                      <a href="/signup" class="button learnmore">Register here</a>
+                      <a href="/signin" class="button investnow">Login here</a>
+                    </div>
+                  {% endif %}
+                  
+              </div>
+
+              <div class="column">
+                  <div class="videcontainer">
+                    <i onclick="Modal('videomodal')" class='bx bx-play-circle' ></i>
+                  </div>
+
+
+              </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+
+    <div class="container section2">
+        <div class="columns">
+            <div class="column" data-aos="fade-up">
+                <h1 class="title  textcentered">
+                    What is Intexcoin 
+                </h1>
+                  <p class="subtitle">
+                  Intexcoin is an advanced investment platform based in the UK. It was established 2016. We are strictly into trading, mining with lots of investment and assets in paid adverts. Our vision is to build a strong alliance and everlasting partnership with our investors , also leading them to financial independence.
+                </p>
+
+
+                
+
+                <a href="" class="button bibasebtn">Get started</a>
+
+
+                <div class="iluconatiner">
+
+                    <img class="ilu" src="static/assets/imgs/illu/1.svg" alt="" srcset="">
+
+
+                </div>
+
+            </div>
+
+            <div class="column" data-aos="fade-down">
+                <div class="iluconatiner">
+                    <img class="ilu" src="static/assets/imgs/illu/2.svg" alt="" srcset="">
+
+                </div>
+
+                <h1 class="title textcentered">
+                    Investing with Intexcoin
+                </h1>
+                <p>
+                  Bitcoin & Ethereum Cryptocurrency Investment Platform - is an officially registered, legitimate company. You can check the number of service license to verify the legality of the services we provide.                 
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container section2">
+      <div class="card" data-aos="flip-up">
+        <div style="height:560px; background-color: #FFFFFF; overflow:hidden; text-align: right; line-height:14px; font-size: 12px; font-feature-settings: normal; text-size-adjust: 100%; box-shadow: inset 0 -20px 0 0 #FFFFFF;padding:1px;padding: 0px; margin: 0px; width: 100%;">
+          <div style="height:540px; padding:0px; margin:0px; width: 100%;">
+            <iframe src="https://widget.coinlib.io/widget?type=chart&theme=light&coin_id=859&pref_coin_id=1505" width="100%" height="536px" scrolling="auto" marginwidth="0" marginheight="0" frameborder="0" border="0" style="border:0;margin:0;padding:0;line-height:14px;"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="middle-section">
+      <h1 class="ways"> 3 EASY STEPS TO YOUR SUCCESS</h1>
+      <div class="row">
+        <div class="column">
+          <div class="icon">1</div>
+          <br>
+          <img src="static/assets/imgs/gift.svg" alt="" srcset="">
+          <div class="content">
+            <h2>Sign up and get a gift!</h2>
+            <h3>
+              Registration takes less <br>than a minute
+            </h3>
+          </div>
+        </div>
+        <div class="column">
+          <div class="icon">2</div>
+          <br>
+          <img src="static/assets/imgs/wallet.svg" alt="" srcset="" >
+          <div class="content">
+            <h2>Fund your account</h2>
+            <h3>Transfer funds to your trading account and start trading</h3>
+            <div id="row">
+              <div id="content-icon"  class="column">
+                <img src="https://img.icons8.com/ios/50/000000/visa.png"/>
+              </div>
+              <div id="content-icon"  class="column">
+                <img src="https://img.icons8.com/color/48/000000/bank-card-back-side.png"/>
+              </div>
+              <div id="content-icon"  class="column">
+                <img src="https://img.icons8.com/color/48/000000/bitcoin--v1.png"/>
+              </div>
+              <div id="content-icon" class="column">
+                <img src="https://img.icons8.com/color/48/000000/paypal.png"/>
+              </div>
+              <div id="content-icon"  class="column">
+                <img src="https://img.icons8.com/fluency/48/000000/flutter.png"/>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="column">
+          <div class="icon">3</div>
+          <br>
+          <img src="static/assets/imgs/invest.svg" alt="" srcset="">
+          <div class="content">
+            <h2>Forecast market direction</h2>
+            <h3>Open a trade in the right <br> direction and earn</h3>
+          </div>
+        </div>
+      </div>
+    
+    </div>
+    
+
+    <section class="container section2">
+      <div class="columns">
+        <div class="column">
+          <h1 class="title value" akhi="6870"></h1>
+          <p class="subtitle">Total Invenstors</p>
+        </div>
+
+        <div class="column">
+          <h1 class="title value" akhi="5787">0</h1>
+          <p class="subtitle">Total Withdraw</p>
+        </div>
+
+        <div class="column">
+          <h1 class="title value" akhi="72850"></h1>
+          <p class="subtitle">Deposited</p>
+        </div>
+
+        <div class="column">
+          <h1 class="title value" akhi="{{activeusers}}">0</h1>
+          <p class="subtitle">Active users</p>
+        </div>
+      </div>
+  </section>
+  <div class="convert">
+    <div class="con-head">
+      <center>
+        <h1>CRYPTO CONVERTER</h1>
+        <h2>FIND OUT THE CURRENT BITCOIN VALUE WITH OUR EASY-TO-USE CONVERTER</h2>
+  
+       <div class="row">
+         <div class="column">
+          <script type="text/javascript">
+            crypt_single_base_currency = "Bitcoin (BTC)";crypt_single_target_currency = "US Dollar (USD)";crypt_single_background_color = "black";crypt_single_border_width = 3;crypt_single_font_color = "white";</script><script type="text/javascript" src="https://www.cryptonator.com/ui/js/widget/single_widget.js"></script>
+            <script type="text/javascript">
+              crypt_single_base_currency = "Ethereum (ETH)";crypt_single_target_currency = "US Dollar (USD)";crypt_single_background_color = "black";crypt_single_border_width = 3;crypt_single_font_color = "whitesmoke";</script><script type="text/javascript" src="https://www.cryptonator.com/ui/js/widget/single_widget.js"></script>
+              <script type="text/javascript">
+                crypt_single_base_currency = "Dogecoin (DOGE)";crypt_single_target_currency = "US Dollar (USD)";crypt_single_background_color = "black";crypt_single_border_width = 3;crypt_single_font_color = "whitesmoke";</script><script type="text/javascript" src="https://www.cryptonator.com/ui/js/widget/single_widget.js"></script>
+  
+         </div>
+         <div class="column">
+          <div style="width: 250px; height:335px; background-color: #FAFAFA; overflow:hidden; box-sizing: border-box; border: 1px solid #56667F; border-radius: 4px; text-align: right; line-height:14px; block-size:335px; font-size: 12px; font-feature-settings: normal; text-size-adjust: 100%; box-shadow: inset 0 -20px 0 0 #56667F;margin: 0;width: 250px;padding:1px;padding: 0px; margin: 0px;"><div style="height:315px; padding:0px; margin:0px; width: 100%;"><iframe src="https://widget.coinlib.io/widget?type=converter&theme=light" width="250" height="310px" scrolling="auto" marginwidth="0" marginheight="0" frameborder="0" border="0" style="border:0;margin:0;padding:0;"></iframe></div><div style="color: #FFFFFF; line-height: 14px; font-weight: 400; font-size: 11px; box-sizing: border-box; padding: 2px 6px; width: 100%; font-family: Verdana, Tahoma, Arial, sans-serif;"><a href="#" target="_blank" style="font-weight: 500; color: #FFFFFF; text-decoration:none; font-size:11px"></div></div>
+         </div>
+       </div>
+    
+    </div>
+   
+  </div>
+  
+
+    <section class="container section2">
+        <h1 data-aos="flip-left" class="title textcentered">Our investment plan</h1>
+          <div  class="carousel" id="carousel-demo">
+            
+             
+            <div class="pricing-table is-comparative">
+              {% for plan in plans %}
+              
+              {% if plan.iSpricing %}
+              <div class="pricing-plan">
+                <div class="plan-header">{{plan.plan}}</div>
+                <div class="plan-price"><span class="plan-price-amount"><span class="plan-price-currency">$</span>{{plan.plan_price}}</span></div>
+                <div class="plan-items">
+                  <div class="plan-item" data-feature="ROI">Return {{plan.plan_roi}} %</div>
+                  <div class="plan-item" data-feature="Rate">Rate {{plan.plan_rate}} days</div>
+                  <div class="plan-item" data-feature="">Free Consultation</div>
+                  <div class="plan-item" data-feature="">Instant Withdrawal</div>
+                </div>
+                <div class="plan-footer">
+                  <a href="/signup" class="button is-fullwidth">Choose plan</a>
+                </div>
+              </div>
+              {% endif  %}
+            
+              {% if plan.isWarning %}
+              <div class="pricing-plan is-warning">
+                <div class="plan-header">{{plan.plan}}</div>
+                <div class="plan-price"><span class="plan-price-amount"><span class="plan-price-currency">$</span>{{plan.plan_price}}</span></div>
+                <div class="plan-items">
+                  <div class="plan-item" data-feature="ROI">Return {{plan.plan_roi}} %</div>
+                  <div class="plan-item" data-feature="Rate">Rate {{plan.plan_rate}} days</div>
+                  <div class="plan-item" data-feature="">Free Consultation</div>
+                  <div class="plan-item" data-feature="">Instant Withdrawal</div>
+                
+                </div>
+                <div class="plan-footer">
+                  <a href="/signup" class="button is-fullwidth">Choose plan</a>
+                </div>
+              </div>
+              {% endif %}
+            
+              {% if plan.IsActive %}
+              <div class="pricing-plan is-active">
+                <div class="plan-header">{{plan.plan}}</div>
+                <div class="plan-price"><span class="plan-price-amount"><span class="plan-price-currency">$</span>{{plan.plan_price}}</span></div>
+                <div class="plan-items">
+                  <div class="plan-item" data-feature="ROI">Return {{plan.plan_roi}} %</div>
+                  <div class="plan-item" data-feature="Rate">Rate {{plan.plan_rate}} days</div>
+                  <div class="plan-item" data-feature="">Free Consultation</div>
+                  <div class="plan-item" data-feature="">Instant Withdrawal</div>
+                
+                </div>
+                <div class="plan-footer">
+                  <a href="/signup" class="button is-fullwidth">Choose plan</a>
+                </div>
+              </div>
+              {% endif %}
+              
+              {% if plan.isDanger %}
+              <div class="pricing-plan is-danger">
+                <div class="plan-header">{{plan.plan}}</div>
+                <div class="plan-price"><span class="plan-price-amount"><span class="plan-price-currency">$</span>{{plan.plan_price}}</span></div>
+                <div class="plan-items">
+                  <div class="plan-item" data-feature="ROI">Return {{plan.plan_roi}} %</div>
+                  <div class="plan-item" data-feature="Rate">Rate {{plan.plan_rate}} days</div>
+                  <div class="plan-item" data-feature="">Free Consultation</div>
+                  <div class="plan-item" data-feature="">Instant Withdrawal</div>
+                
+                </div>
+                <div class="plan-footer">
+                  <a href="/signup" class="button is-fullwidth">Choose plan</a>
+                </div>
+              </div>
+              {% endif %}
+              
+
+              {% endfor %}
+
+
+            </div>
+
+
+            <div class="pricing-table is-comparative">
+              {% for plan in plans %}
+              
+              {% if plan.iSpricing %}
+              <div class="pricing-plan">
+                <div class="plan-header">{{plan.plan}}</div>
+                <div class="plan-price"><span class="plan-price-amount"><span class="plan-price-currency">$</span>{{plan.plan_price}}</span></div>
+                <div class="plan-items">
+                  <div class="plan-item" data-feature="ROI">Return {{plan.plan_roi}} %</div>
+                  <div class="plan-item" data-feature="Rate">Rate {{plan.plan_rate}} days</div>
+                  <div class="plan-item" data-feature="">Free Consultation</div>
+                  <div class="plan-item" data-feature="">Instant Withdrawal</div>
+                
+                </div>
+                <div class="plan-footer">
+                  <a href="/signup" class="button is-fullwidth">Choose plan</a>
+                </div>
+              </div>
+              {% endif  %}
+            
+              {% if plan.isWarning %}
+              <div class="pricing-plan is-warning">
+                <div class="plan-header">{{plan.plan}}</div>
+                <div class="plan-price"><span class="plan-price-amount"><span class="plan-price-currency">$</span>{{plan.plan_price}}</span></div>
+                <div class="plan-items">
+                  <div class="plan-item" data-feature="ROI">Return {{plan.plan_roi}} %</div>
+                  <div class="plan-item" data-feature="Rate">Rate {{plan.plan_rate}} days</div>
+                  <div class="plan-item" data-feature="">Free Consultation</div>
+                  <div class="plan-item" data-feature="">Instant Withdrawal</div>
+                
+                </div>
+                <div class="plan-footer">
+                  <a href="/signup" class="button is-fullwidth">Choose plan</a>
+                </div>
+              </div>
+              {% endif %}
+            
+              {% if plan.IsActive %}
+              <div class="pricing-plan is-active">
+                <div class="plan-header">{{plan.plan}}</div>
+                <div class="plan-price"><span class="plan-price-amount"><span class="plan-price-currency">$</span>{{plan.plan_price}}</span></div>
+                <div class="plan-items">
+                  <div class="plan-item" data-feature="ROI">Return {{plan.plan_roi}} %</div>
+                  <div class="plan-item" data-feature="Rate">Rate {{plan.plan_rate}} days</div>
+                  <div class="plan-item" data-feature="">Free Consultation</div>
+                  <div class="plan-item" data-feature="">Instant Withdrawal</div>
+                
+                </div>
+                <div class="plan-footer">
+                  <a href="/signup" class="button is-fullwidth">Choose plan</a>
+                </div>
+              </div>
+              {% endif %}
+              
+              {% if plan.isDanger %}
+              <div class="pricing-plan is-danger">
+                <div class="plan-header">{{plan.plan}}</div>
+                <div class="plan-price"><span class="plan-price-amount"><span class="plan-price-currency">$</span>{{plan.plan_price}}</span></div>
+                <div class="plan-items">
+                  <div class="plan-item" data-feature="ROI">Return {{plan.plan_roi}} %</div>
+                  <div class="plan-item" data-feature="Rate">Rate {{plan.plan_rate}} days</div>
+                  <div class="plan-item" data-feature="">Free Consultation</div>
+                  <div class="plan-item" data-feature="">Instant Withdrawal</div>
+                
+                </div>
+                <div class="plan-footer">
+                  <a href="/signup" class="button is-fullwidth">Choose plan</a>
+                </div>
+              </div>
+              {% endif %}
+              
+
+              {% endfor %}
+
+
+            </div>
+
+
+            <div class="pricing-table is-comparative">
+              {% for plan in plans %}
+              
+              {% if plan.iSpricing %}
+              <div class="pricing-plan">
+                <div class="plan-header">{{plan.plan}}</div>
+                <div class="plan-price"><span class="plan-price-amount"><span class="plan-price-currency">$</span>{{plan.plan_price}}</span></div>
+                <div class="plan-items">
+                  <div class="plan-item" data-feature="ROI">Return {{plan.plan_roi}} %</div>
+                  <div class="plan-item" data-feature="Rate">Rate {{plan.plan_rate}} days</div>
+                  <div class="plan-item" data-feature="">Free Consultation</div>
+                  <div class="plan-item" data-feature="">Instant Withdrawal</div>
+                
+                </div>
+                <div class="plan-footer">
+                  <a href="/signup" class="button is-fullwidth">Choose plan</a>
+                </div>
+              </div>
+              {% endif  %}
+            
+              {% if plan.isWarning %}
+              <div class="pricing-plan is-warning">
+                <div class="plan-header">{{plan.plan}}</div>
+                <div class="plan-price"><span class="plan-price-amount"><span class="plan-price-currency">$</span>{{plan.plan_price}}</span></div>
+                <div class="plan-items">
+                  <div class="plan-item" data-feature="ROI">Return {{plan.plan_roi}} %</div>
+                  <div class="plan-item" data-feature="Rate">Rate {{plan.plan_rate}} days</div>
+                  <div class="plan-item" data-feature="">Free Consultation</div>
+                  <div class="plan-item" data-feature="">Instant Withdrawal</div>
+                
+                </div>
+                <div class="plan-footer">
+                  <a href="/signup" class="button is-fullwidth">Choose plan</a>
+                </div>
+              </div>
+              {% endif %}
+            
+              {% if plan.IsActive %}
+              <div class="pricing-plan is-active">
+                <div class="plan-header">{{plan.plan}}</div>
+                <div class="plan-price"><span class="plan-price-amount"><span class="plan-price-currency">$</span>{{plan.plan_price}}</span></div>
+                <div class="plan-items">
+                  <div class="plan-item" data-feature="ROI">Return {{plan.plan_roi}}%</div>
+                  <div class="plan-item" data-feature="Rate">Rate {{plan.plan_rate}} days</div>
+                  <div class="plan-item" data-feature="">Free Consultation</div>
+                  <div class="plan-item" data-feature="">Instant Withdrawal</div>
+                
+                </div>
+                <div class="plan-footer">
+                  <a href="/signup" class="button is-fullwidth">Choose plan</a>
+                </div>
+              </div>
+              {% endif %}
+              
+              {% if plan.isDanger %}
+              <div class="pricing-plan is-danger">
+                <div class="plan-header">{{plan.plan}}</div>
+                <div class="plan-price"><span class="plan-price-amount"><span class="plan-price-currency">$</span>{{plan.plan_price}}</span></div>
+                <div class="plan-items">
+                  <div class="plan-item" data-feature="ROI">Return {{plan.plan_roi}}%</div>
+                  <div class="plan-item" data-feature="Rate">Rate {{plan.plan_rate}} days</div>
+                  <div class="plan-item" data-feature="">Free Consultation</div>
+                  <div class="plan-item" data-feature="">Instant Withdrawal</div>
+                
+                </div>
+                <div class="plan-footer">
+                  <a href="/signup" class="button is-fullwidth">Choose plan</a>
+                </div>
+              </div>
+              {% endif %}
+              
+
+              {% endfor %}
+
+
+            </div>
+
+
+            
+
+          </div>    
+    </section>
+
+  
+
+    <div id="videomodal" class="modal">
+      <div class="modal-background"></div>
+      <div class="modal-content">
+        <iframe style="padding: .75rem;" width="100%" height="315" src="https://www.youtube.com/embed/3cCUkmTJNo8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <button onclick="Modal('videomodal')" class="modal-close is-large" aria-label="close"></button>
+    </div>
+
+    {% include "footer.html" %}
+
+
+<!-- 
+    <footer class="footer">
+      <div class="footer-item">
+        <div class="logo">
+          <i class='bx bxl-bitcoin' ></i> <h1 class="title">Bibase</h1>
+        </div>
+        <p>reinventing the global equity blockchian</p>
+        <div class="social">
+
+
+          <a href="https://api.whatsapp.com/send?phone=+447888875474&text=Hello Bibase capital">
+            <i class='bx bxl-whatsapp' ></i>
+          </a>
+          <a href="tel:+447888875474">
+            <i class='bx bx-phone-call' ></i>         
+           </a>
+           <a href="">
+            <i class='bx bx-envelope' ></i>
+           </a>
+
+          <a href="">
+            <i class='bx bxl-twitter' ></i>
+          </a>
+
+          <a href="">
+            <i class='bx bxl-facebook-circle' ></i>
+          </a>
+
+        </div>
+      </div>
+
+
+      <div class="footer-item">
+        <h4 class="title">Short Links</h4>
+        <a href="">Home</a>
+        <a href="/about">About us</a>
+        <a href="/contact">Contact</a>
+      </div>
+
+
+      <div class="footer-item">
+        <h4 class="title">Company</h4>
+        <a href="/about">Career</a>
+        <a href="/contact">Press release</a>
+      </div>
+
+      <div class="footer-item">
+
+        <div class="contactform">
+          <div class="contactforminput">
+              <i class='bx bx-user' ></i>
+              <input type="text" id="fname" placeholder="Fullname">
+          </div>
+          <div class="contactforminput">
+              <i class='bx bx-envelope'></i>
+              <input type="text" id="email" placeholder="Email">
+          </div>
+          
+          <div class="contactforminput-textarea">
+              <textarea placeholder="your messages"></textarea>
+              <button><i class='bx bx-send'></i></button>
+          </div>
+         </div>
+
+      </div>
+
+      </div>
+
+    </footer>
+     -->
+  
+
+
+
+    
+    
+    {% include "chat.html" %}
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+  
+    <script src="static/assets/courosel/bulma-carousel.js"></script>
+    <script src="static/assets/js/bibase.js"></script>
+    <script src="static/assets/js/custom.js"></script>
+
+
+    <script>
+      const counters = document.querySelectorAll('.value');
+        const speed = 200;
+
+counters.forEach( counter => {
+   const animate = () => {
+      const value = +counter.getAttribute('akhi');
+      const data = +counter.innerText;
+     
+      const time = value / speed;
+     if(data < value) {
+          counter.innerText = Math.ceil(data + time);
+          setTimeout(animate, 1);
+        }else{
+          counter.innerText = value;
+        }
+     
+   }
+   
+   animate();
+});
+
+
+
+    </script>
+
+</body>
+</html>
