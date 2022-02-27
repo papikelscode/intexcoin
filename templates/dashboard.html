@@ -423,11 +423,13 @@ option{
                                   </h4>
                                
                                   
-                                  <select onchange="GetMarket()" class="selectx" name="" id="mkt">
+                                  <select onchange="GetMarket()" class="selectx" name="" id="mktype">
                                     <option value="" selected >Market type</option>
-                                    <option value="cyptocurrency">cyptocurrency</option>
+                                    {% for mk in markets %}
+                                    <option value="{{mk.types}}">{{mk.types}}</option>
+                                    {% endfor %}
                                   </select>
-                                  <select class="selectx" name="" id="mktype">
+                                  <select class="selectx" id="market">
                                     <option value="">select market</option>
                                   </select>
 
@@ -446,10 +448,7 @@ option{
                                   </select>
                                   <input type="text" placeholder="Order Rate (Amount)">
 
-                                  <button class="buttony" onclick="page()" > <a class="btnn"  href="call.html">Submit</a> 
-                                    <i class='bx bx-money' id="arrowj"></i>
-                          <i class='bx bx-loader-alt bx-spin bx-rotate-90' style="display: none;" id="spinj"></i>
-                                  </button>
+                                  <button class="buttony button">Submit<i class='bx bx-money'></i> </button>
                                 </form>
                               </div>
                             </div>
@@ -479,11 +478,13 @@ option{
                                   <h4>
                                     Plan Package: <strong> {{plan.plan}} </strong>
                                   </h4>
-                                  <select onchange="GetMarket()" class="selectx" name="" id="mkt">
-                                    <option value="" selected >Market type</option>
-                                    <option value="cyptocurrency">cyptocurrency</option>
-                                  </select>
-                                  <select class="selectx" name="" id="mktype">
+                                  <select onchange="GetMarketPut()" class="selectx" name=""  id="mktypex">
+                                    <option value="" selected>Market type</option>
+                                    {% for mk in markets %}
+                                    <option value="{{mk.types}}">{{mk.types}}</option>
+                                    {% endfor %}
+                                    </select>
+                                  <select class="selectx" name="" id="marketxxx">
                                     <option value="">select market</option>
                                   </select>
 
@@ -502,9 +503,9 @@ option{
                                   </select>
                                   <input type="text" placeholder="Order Rate (Amount)">
 
-                                  <button class="buttony" onclick="page()" > <a class="btnn"">Submit</a> 
-                                    <i class='bx bx-money' id="arrowj"></i>
-                          <i class='bx bx-loader-alt bx-spin bx-rotate-90' style="display: none;" id="spinj"></i>
+                                  <button class="buttony button">
+                                     Submit
+                                    <i class='bx bx-money'></i>
                                   </button>
                                 </form>
                               </div>

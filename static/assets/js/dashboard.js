@@ -208,8 +208,33 @@ function Modal(modalid){
 
   const GetMarket= async ()=>{
     console.log('here test');
-      const type = document.getElementById('mkt')
+      const type = document.getElementById('mktype')
+      const market = document.getElementById('market')
       console.log(type.options[type.selectedIndex].value);
       const response = await axios.get(`/markrttype/${type.options[type.selectedIndex].value}`) 
+      for(i in response.data){
+        const options = document.createElement('option')
+        options.text = response.data[i]
+        options.value = response.data[i]
+        market.appendChild(options)
+        console.log(response.data[i]);
+      }
+      console.log(response);
+  }
+
+  const GetMarketPut= async ()=>{
+      const marketx = document.querySelector('#marketxxx');
+      console.log('here test');
+      const type = document.getElementById('mktypex')
+      console.log(type.options[type.selectedIndex].value);
+      const response = await axios.get(`/markrttype/${type.options[type.selectedIndex].value}`) 
+      
+      for(i in response.data){
+        const options = document.createElement('option')
+        options.text = response.data[i]
+        options.value = response.data[i]
+        marketx.appendChild(options)
+        console.log(response.data[i]);
+      }
       console.log(response);
   }

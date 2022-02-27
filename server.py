@@ -151,7 +151,7 @@ class Market(db.Model):
 
 class MarketSchema(ma.Schema):
     class Meta:
-        fields = ["coinname",'types']
+        fields = ['coinname'] 
 
 mrkschema = MarketSchema()
 
@@ -201,12 +201,14 @@ def dashboard():
     txs = Transactions.query.filter_by(user=current_user.id).all()
     plan = Plan.query.all()
     total = current_user.profit + current_user.balance
+    markets = Market.query.all()
     return render_template('dashboard.html',
                                 siteSettings=siteSettings,
                                 userplan=userplan,
                                 txs=txs,
                                 plan=plan,
-                                total=total)
+                                total=total,
+                                markets=markets)
 
 @app.route("/withdraw",methods=['GET'])
 def withdraw():
@@ -360,8 +362,13 @@ def verify():
 
 @app.route('/markrttype/<types>')
 def market_type(types):
+    print(len(types))
     mk = Market.query.filter_by(types=types).all()
-    return mrkschema(mk)
+    coin = []
+    for i in mk:
+        coin.append(i.coinname)
+
+    return jsonify(coin)
 
 
 
