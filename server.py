@@ -16,7 +16,7 @@ import os
 from flask_mail import Mail
 from random import randint
 from datetime import datetime
-from flask_marshmallow import Marshmallow
+#from flask_marshmallow import Marshmallow
 
 
 
@@ -42,7 +42,6 @@ app.config['MAIL_USERNAME'] = 'info@247cryptocurrenncy.com'
 app.config['MAIL_SERVER'] = 'server148.web-hosting.com'
 
 db = SQLAlchemy(app)
-ma = Marshmallow(app)
 
 #migrate = Migrate(app, db,render_as_batch=True)
 #manager = Manager(app)
@@ -149,11 +148,6 @@ class Market(db.Model):
     types    =   db.Column(db.String(255))
 
 
-class MarketSchema(ma.Schema):
-    class Meta:
-        fields = ['coinname'] 
-
-mrkschema = MarketSchema()
 
     
 admin = Admin(app, name='administration', template_mode='bootstrap3')
