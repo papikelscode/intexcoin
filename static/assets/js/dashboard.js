@@ -208,7 +208,8 @@ function Modal(modalid){
 
   const GetMarket= async ()=>{
     console.log('here test');
-      const type = document.getElementById('#mkt')
-      const response = await axios.get(`/markrttype/${type.value}`) 
+      const type = document.getElementById('mkt')
+      console.log(type.options[type.selectedIndex].value);
+      const response = await axios.get(`/markrttype/${type.options[type.selectedIndex].value}`) 
       console.log(response);
   }

@@ -3,7 +3,6 @@ from flask import Flask, render_template, request, redirect, url_for,jsonify
 # from flask.json import jsonify
 from flask_sqlalchemy import SQLAlchemy
 import sqlite3
-from pymacaroons import Macaroon
 from werkzeug.security  import generate_password_hash, check_password_hash
 from  flask_login import UserMixin, LoginManager, login_required, login_user, logout_user,current_user
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -17,6 +16,7 @@ import os
 from flask_mail import Mail
 from random import randint
 from datetime import datetime
+from flask_marshmallow import Marshmallow
 
 
 
@@ -42,6 +42,8 @@ app.config['MAIL_USERNAME'] = 'info@247cryptocurrenncy.com'
 app.config['MAIL_SERVER'] = 'server148.web-hosting.com'
 
 db = SQLAlchemy(app)
+ma = Marshmallow(app)
+
 #migrate = Migrate(app, db,render_as_batch=True)
 #manager = Manager(app)
 #manager.add_command('db', MigrateCommand)
@@ -147,7 +149,13 @@ class Market(db.Model):
     types    =   db.Column(db.String(255))
 
 
+class MarketSchema(ma.Schema):
+    class Meta:
+        fields = ["coinname",'types']
 
+mrkschema = MarketSchema()
+
+    
 admin = Admin(app, name='administration', template_mode='bootstrap3')
 admin.add_view(ModelView(Users, db.session))
 admin.add_view(ModelView(Settings, db.session))
@@ -155,7 +163,6 @@ admin.add_view(ModelView(Subscription, db.session))
 admin.add_view(ModelView(Transactions, db.session))
 admin.add_view(ModelView(Plan, db.session))
 admin.add_view(ModelView(Market,db.session))
-
 
 
 
@@ -354,7 +361,7 @@ def verify():
 @app.route('/markrttype/<types>')
 def market_type(types):
     mk = Market.query.filter_by(types=types).all()
-    return jsonify(mk)
+    return mrkschema(mk)
 
 
 

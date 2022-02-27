@@ -423,10 +423,11 @@ option{
                                   </h4>
                                
                                   
-                                  <select class="selectx" name="" id="">
-                                    <option value="">Market type</option>
+                                  <select onchange="GetMarket()" class="selectx" name="" id="mkt">
+                                    <option value="" selected >Market type</option>
+                                    <option value="cyptocurrency">cyptocurrency</option>
                                   </select>
-                                  <select class="selectx" name="" id="">
+                                  <select class="selectx" name="" id="mktype">
                                     <option value="">select market</option>
                                   </select>
 
@@ -479,7 +480,8 @@ option{
                                     Plan Package: <strong> {{plan.plan}} </strong>
                                   </h4>
                                   <select onchange="GetMarket()" class="selectx" name="" id="mkt">
-                                    <option value="">Market type</option>
+                                    <option value="" selected >Market type</option>
+                                    <option value="cyptocurrency">cyptocurrency</option>
                                   </select>
                                   <select class="selectx" name="" id="mktype">
                                     <option value="">select market</option>
@@ -500,7 +502,7 @@ option{
                                   </select>
                                   <input type="text" placeholder="Order Rate (Amount)">
 
-                                  <button class="buttony" onclick="page()" > <a class="btnn"  href="call.html">Submit</a> 
+                                  <button class="buttony" onclick="page()" > <a class="btnn"">Submit</a> 
                                     <i class='bx bx-money' id="arrowj"></i>
                           <i class='bx bx-loader-alt bx-spin bx-rotate-90' style="display: none;" id="spinj"></i>
                                   </button>
