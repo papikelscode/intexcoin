@@ -36,9 +36,9 @@ app.config['SECRET_KEY'] = "jhkxhiuydu"
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///'+os.path.join(basedir,database)
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
 app.config['FLASK_ADMIN_SWATCH'] = 'cerulean'
-app.config['MAIL_SERVER'] = '247cryptocurrency.com'
+app.config['MAIL_SERVER'] = 'intexcoin.com'
 app.config['MAIL_PORT'] = 465
-app.config['MAIL_USERNAME'] = 'info@247cryptocurrenncy.com'
+app.config['MAIL_USERNAME'] = 'info@intexcoin.com'
 app.config['MAIL_SERVER'] = 'server148.web-hosting.com'
 
 db = SQLAlchemy(app)

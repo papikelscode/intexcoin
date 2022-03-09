@@ -7,6 +7,7 @@
         Details.email = document.getElementById("email").value
         Details.fname = document.getElementById("fname").value
         Details.password = document.getElementById("password").value
+        Details.phone = document.getElementById("phone").value
         console.log("details",Details);
 
         var arrow = document.getElementById("arrow")

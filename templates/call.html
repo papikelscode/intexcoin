@@ -7,20 +7,225 @@
   <link rel="stylesheet" href="static/assets/css/style.css">
   <link rel="stylesheet" href="static/assets/js/table/jstable.css">
   <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-  <title>Trade | Home</title>
+  <style>
+    /* #overlayer {
+  width:100%;
+  height:100%;  
+  position:fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  z-index: 2;
+  background:#4a4a4a;
+}
+.preloader p{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -45px;
+    width: 120px;
+    height: 90px;
+    
+    text-align: center;
+    color: black;
+    font-size: 24px;
+    z-index: 3;
+}
+.loader {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  z-index:3;
+  border: 4px solid #Fff;
+  top: 50%;
+  animation: loader 2s infinite ease;
+}
+.loader-inner {
+  vertical-align: top;
+  display: inline-block;
+  width: 100%;
+  background-color: #fff;
+  animation: loader-inner 2s infinite ease-in;
+}
+@keyframes loader {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(180deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  75% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes loader {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(180deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  75% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes loader-inner {
+  0% {
+    height: 0%;
+  }
+  25% {
+    height: 0%;
+  }
+  50% {
+    height: 100%;
+  }
+  75% {
+    height: 100%;
+  }
+  100% {
+    height: 0%;
+  }
+}
+@-webkit-keyframes loader-inner {
+  0% {
+    height: 0%;
+  }
+  25% {
+    height: 0%;
+  }
+  50% {
+    height: 100%;
+  }
+  75% {
+    height: 100%;
+  }
+  100% {
+    height: 0%;
+  }
+} */
+
+:root{
+    /* --primarycolor: #C7AF88; */
+    --primarycolor: #070d2b;
+
+}
+
+.preloader {
+        position:fixed;
+        top:0;
+        left:0;
+        right:0;
+        bottom:0;
+        background: white ; 
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        height: 100%;
+        z-index:99; /* makes sure it stays on top */
+    }
+    .loaded{
+        visibility: hidden;
+    }
+    
+
+    .progress__container{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 150px;
+        background-color: white;
+    }
+
+    .loadicon{
+        color: var(--primarycolor);
+    }
+
+    #progress_label{
+        color: var(--primarycolor);
+    }
+
+
+    .shownav{
+        display: block;
+    }
+
+    .is-activex{
+        display: block;
+    }
+    @keyframes modalopen {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+    #demo{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-left: 50%;
+      background-color: #070d2b;
+      color: white;
+      animation: modalopen;
+      transform: translate(-50%, -50%);
+      width: 20%;
+      height: 3rem;
+      font-size: 25px;
+      margin-top: 3%;
+
+
+    }
+    
+  </style>
+  <title>Trade | CALL</title>
   
 </head>
-<body>
   
+<body>
 
+  <!-- <div class="preloader" id="preloader">
 
+    <div class="progress__container">
+      <center>
+        <h4 id="progress_label">
+            <i style="color: darkgoldenrod;" class='bx bxl-bitcoin' ></i> <h2 id="bibasetext" class="title">Intexcoin</h2>
+        
+        </h4>
+        <progress id="progress" class="progress is-small" value="0" max="100">20%</progress>
+        
+      </center>
+    </div>
+  </div>  -->
+  
+  
 {% include "sidebar.html" %}
     
 {% include "header.html" %}
 <div class="body-container">
 
-    
+       
   <div class="container">
+    <p id="demo"></p>
+      
+    
     <div class="trad">
       <iframe scrolling="no" allowtransparency="true" frameborder="0" src="https://s.tradingview.com/embed-widget/ticker-tape/?locale=en#%7B%22symbols%22%3A%5B%7B%22proName%22%3A%22BITSTAMP%3ABTCUSD%22%2C%22title%22%3A%22BTC%2FUSD%22%7D%2C%7B%22description%22%3A%22TESLA%22%2C%22proName%22%3A%22NASDAQ%3ATSLA%22%7D%2C%7B%22description%22%3A%22SNAP%20INC%22%2C%22proName%22%3A%22NYSE%3ASNAP%22%7D%2C%7B%22description%22%3A%22TWITTER%20INC%22%2C%22proName%22%3A%22NYSE%3ATWTR%22%7D%2C%7B%22description%22%3A%22FACEBOOK%20INC%22%2C%22proName%22%3A%22NASDAQ%3AFB%22%7D%2C%7B%22description%22%3A%22APPLE%20INC%22%2C%22proName%22%3A%22NASDAQ%3AAAPL%22%7D%2C%7B%22description%22%3A%22COCA-COLA%20CO%22%2C%22proName%22%3A%22NYSE%3AKO%22%7D%5D%2C%22showSymbolLogo%22%3Atrue%2C%22colorTheme%22%3A%22dark%22%2C%22isTransparent%22%3Afalse%2C%22displayMode%22%3A%22compact%22%2C%22width%22%3A%22100%25%22%2C%22height%22%3A74%2C%22utm_source%22%3A%22app.cryptoroots.net%22%2C%22utm_medium%22%3A%22widget%22%2C%22utm_campaign%22%3A%22ticker-tape%22%7D" style="box-sizing: border-box; height: 74px; width: 100%;"></iframe>
      </div>
@@ -123,16 +328,74 @@
 </div>
 <!-- TradingView Widget END -->
                       </div>
+                      <script>
+                         let LoadStatus = 0;
+
+window.addEventListener('load',function(){
+  var loader = document.getElementById('preloader')
+  loader.classList.add("loaded")
+  LoadStatus +=1
+
+});
+
+
+let progressBAr = document.getElementById("progress")
+let progression = 0;
+
+
+progress = setInterval(function() 
+{
+    if(progression == 100 || LoadStatus == 1) {
+        clearInterval(progress);
+    } else
+        progression += 1;
+        document.getElementById("progress_label").textContent = progression+"%"
+        progressBAr.value = progression;
+    
+}, 1000);  
+
+
+                      </script>
+                      <script>
+
+
+
+
+                        var countDownDate = new Date("Jan 5, 2024 15:37:25").getTime();
+                      
+
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+  // Get today's date and time
+  var now = new Date().getTime();
+
+  // Find the distance between now and the count down date
+  var distance = countDownDate - now;
+
+   // Time calculations for days, hours, minutes and seconds
+ 
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 7)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  // Display the result in the element with id="demo"
+  document.getElementById("demo").innerHTML =  hours + "h "
+  + minutes + "m " + seconds + "s ";
+
+  // If the count down is finished, write some text
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("demo").innerHTML = "EXPIRED";
+  }
+}, 1000);
+                      </script>
+                     
                       <script src="static/assets/js/table/jstable.min.js"></script>
                       <script src="{{url_for("static",filename='assets/js/axios.min.js')}}"></script>
                       <script src="static/assets/js/dashboard.js"></script>
                       <script src="static/assets/js/custom.js"></script>
-                      <script>
-                        function Total(x,y){
-                          console.log("oi",x,y);
-                          var label = document.getElementById('total')
-                          label.innerText ='$'+x+y
-                        }
-                      </script>
+                    
+
                     </body>
                     </html>
