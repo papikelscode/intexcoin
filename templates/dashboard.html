@@ -207,12 +207,12 @@ a{
   width: 55%;
 }
 .buttonx{
-  height: 3rem;
+  height: 4.5rem;
   width: 35%;
 }
 .buttonxy{
-  height: 3rem;
-  width: 35%;
+  height: 4.5rem;
+  width: 40%;
 }
 option{
   width: 15%;
@@ -296,7 +296,7 @@ option{
 
 
     <div class="body-container">
- 
+    
     
         <div class="container">
           <div class="trad">
@@ -485,18 +485,19 @@ new TradingView.widget(
               <option value="">select market</option>
             </select>
 
-            <select class="selectx" name="" id="time" aria-placeholder="" required>
+            <select class="selectx" name="" id="change" aria-placeholder="" required>
               <option value="">---Long/Short Positions---</option>
-              <option value="" id="1min" onclick="mintuesx()">1 min</option>
-              <option value="" id="5min" onclick="mintuesy()">5 min</option>
-              <option value="">10 min</option>
-              <option value="">30 min</option>
-              <option value="">1 hour</option>
-              <option value="">2 hour</option>
+              <option value="1" selected>1 min</option>
+              <option value="2">5 min</option>
+              <option value="3">10 min</option>
+              <option value="4">30 min</option>
+              <option value="5">1 hour</option>
+              <option value="6">2 hour</option>
+            
             </select>
             <input type="text" placeholder="Order Rate (Amount)" required>
 
-            <button class="buttony button" >
+            <button class="buttony button" onclick="generateData()" >
               <a href="call.html">Submit</a>
                
                
@@ -541,19 +542,19 @@ new TradingView.widget(
               <option value="">select market</option>
             </select>
 
-            <select class="selectx" name="" id="" aria-placeholder="" required>
+            <select class="selectx" name="" id="change"  aria-placeholder="" required>
               <option value="">---Long/Short Positions---</option>
-              <option value="" id="1min" onclick="update1()">1 min</option>
-              <option value="" id="5min">5 min</option>
-              <option value="" id="10min">10 min</option>
-              <option value="" id="30min">30 min</option>
-              <option value="" id="1hour">1 hour</option>
-              <option value="" id="2hour">2 hour</option>
+              <option value="1" selected>1 min</option>
+              <option value="2">5 min</option>
+              <option value="3">10 min</option>
+              <option value="4">30 min</option>
+              <option value="5">1 hour</option>
+              <option value="6">2 hour</option>
             
             </select>
             <input type="text" placeholder="Order Rate (Amount)" required>
 
-            <button class="buttony button" >
+            <button class="buttony button" onclick="generateData()" >
               <a href="call.html">Submit</a>
                
                
@@ -651,6 +652,41 @@ new TradingView.widget(
     {% include "walletmodal.html" %}
 
 <script>
+ 
+
+// var select =document.getElementById("change");
+//        const timer = (input) =>{
+//          let timeleft = input * 60
+//          setInterval(() =>{
+//            timeleft = 1;
+//            document.querySelector('#demo').textContent = timeleft
+//          },1000)
+//        };
+
+//        const getOption = () =>{
+//          selectElement = document.querySelector('#change');
+//          output = selectElement.value;
+//          timer(output)
+//        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   function callModal(){
      // Get DOM Elements
 const modal = document.querySelector('#call-modal');
@@ -740,7 +776,7 @@ progress = setInterval(function()
 </script>    
 
 
-
+<script src="static/assets/js/count.js"></script>
     <script src="static/assets/js/table/jstable.min.js"></script>
     <script src="{{url_for("static",filename='assets/js/axios.min.js')}}"></script>
     <script src="static/assets/js/dashboard.js"></script>
