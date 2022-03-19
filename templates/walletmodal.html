@@ -1,0 +1,237 @@
+<div id="modal" class="modal">
+      <div class="modal-background"></div>
+      <div class="modal-card">
+        
+        <section class="modal-card-body">
+          <div class="container">
+            <div class="columns">
+  
+              <div class="column">
+                <img src="static/assets/imgs/illu/wallet.svg" alt="" srcset="">
+              </div>
+  
+              <div class="column">
+                <p class="subtitle">
+                  Select investment plan of choice & pick your funding source below
+                </p>
+  
+                <div class="formcontainer">
+                  <div style="display: none;" id="notification" class="notification is-primary">
+                            <button class="delete"></button>
+                            <p id="alertmsg"></p>
+                          </div>
+                  <div class="inputconatiner">
+                    <i class='bx bxl-bitcoin'></i>
+                    <select name="funding" id="">
+                      <option value="" selected>Select funding source</option>
+                      <option value="Mywallet">Available balance</option>
+                    </select>
+                  </div>
+                  <div class="inputconatiner">
+                    <i class='bx bx-list-ul' ></i>
+                      <select id="plan" name="plan" id="">
+                        <option value="" selected>Select investment plan</option>
+                        {% for i in plan %}
+                        <option value="{{i.plan}}">{{i.plan}}</option>
+                        {% endfor %}
+                        
+                      </select>
+                  </div>
+                  
+
+                  <div class="columns">
+                    <div class="column">
+                      <button onclick="Subscribe()" class="button signinbtn">Submit Payment
+                        <i class='bx bx-right-arrow-alt' id="arrow" ></i>
+                            <i class='bx bx-loader-alt bx-spin bx-rotate-90' style="display: none;" id="spin"></i>
+                      </button>
+                    </div>
+
+                    <div class="column">
+                      <button class="button is-danger" onclick="Modal('modal')">Close</button>
+                    </div>
+                  </div>
+  
+              </div>
+  
+              </div>
+  
+  
+            </div>
+          </div>
+        </section>
+        
+      </div>
+</div>
+  
+
+
+
+
+
+
+
+
+
+
+
+<div id="userwallet" class="modal">
+      <div class="modal-background"></div>
+      <div class="modal-card">
+        
+        <section class="modal-card-body">
+          <div class="container">
+            <div class="columns">
+  
+              <div class="column">
+                <img src="static/assets/imgs/illu/userwallet.svg" alt="" srcset="">
+              </div>
+  
+              <div class="column">
+                <p class="subtitle">
+                  Add your bitcoin wallet address to receive your dividends, as your ROi mature for withdrawal
+                </p>
+  
+                <div class="formcontainer">
+                  <div style="display: none;" id="notify" class="notification is-primary">
+                            <button class="delete"></button>
+                            <p id="alertmsgx"></p>
+                          </div>
+                  <div class="inputconatiner">
+                    <i class='bx bxl-bitcoin'></i>
+                      <input id="wallet" type="text" placeholder="Bitcoin walletaddress (Note: Your payment will be deliverd to this address)">
+                  </div>
+                  
+                  
+
+                  <div class="columns">
+                    <div class="column">
+                      <button onclick="AddWallet()" class="button signinbtn">Submit Wallet
+                        <i class='bx bx-right-arrow-alt' id="arrowx" ></i>
+                            <i class='bx bx-loader-alt bx-spin bx-rotate-90' style="display: none;" id="spinx"></i>
+                      </button>
+                    </div>
+
+                    <div class="column">
+                      <button class="button is-danger" onclick="Modal('userwallet')">Close</button>
+                    </div>
+                  </div>
+  
+              </div>
+  
+              </div>
+  
+  
+            </div>
+          </div>
+        </section>
+        
+      </div>
+    </div>
+
+
+
+    <div id="fundwallet" class="modal">
+      <div class="modal-background"></div>
+      <div class="modal-card">
+        
+        <section class="modal-card-body">
+          <div class="container">
+            <div class="columns">
+  
+              <div class="column">
+                <img src="static/assets/imgs/illu/userwallet.svg" alt="" srcset="">
+              </div>
+  
+              <div class="column">
+                <p class="subtitle">
+                  After successfull payment,
+                  Add your transaction proof to verify your deposit, Our system will verify the payment in 24hours & your wallet will be funded.
+                  Payment can be made to these wallet addresses below.
+                </p>
+
+                {% for wallet in siteSettings %}
+                <label class="radio"><strong>{{wallet.walletName}}</strong> {{wallet.walletaddress}}
+                  <input id="walletid" name="a" value="{{wallet.walletaddress}}" type="radio">
+                  <span class="checkmark"></span>
+                </label>
+                {% endfor %}
+  
+                <div class="formcontainer">
+                  <div style="display: none;" id="notificationm" class="notification is-primary">
+                            <button onclick="Modal('notificationm')" id="cncl" class="delete"></button>
+                            <p id="alertmsgm"></p>
+                          </div>
+                  <div class="inputconatiner">
+                    <i class='bx bxl-bitcoin'></i>
+                      <input id="paymentID" type="text" placeholder="Your blockchain payment ID">
+                  </div>
+                  
+                  
+
+                  <div class="columns">
+                    <div class="column">
+                      <button onclick="Payment()" class="button signinbtn">Submit Payment Proof
+                        <i class='bx bx-right-arrow-alt' id="arrowm" ></i>
+                            <i class='bx bx-loader-alt bx-spin bx-rotate-90' style="display: none;" id="spinm"></i>
+                      </button>
+                    </div>
+
+                    <div class="column">
+                      <button class="button is-danger" onclick="Modal('fundwallet')">Close</button>
+                    </div>
+                  </div>
+  
+              </div>
+  
+              </div>
+  
+  
+            </div>
+          </div>
+        </section>
+        
+      </div>
+    </div>
+
+
+
+
+
+
+
+  <div id="docs" class="modal">
+  <div class="modal-background"></div>
+  <div class="modal-card">
+    
+    <section class="modal-card-body">
+      <div class="container">
+        {% if  current_user.verified == False %}
+
+        
+        <h1 style="text-align: center;" class="title">Please verify your account</h1>
+        <h5 style="text-align: center;" class="subtitle">Upload verification document below (refresh page after successfful upload)</h5>
+
+        <form action="/verify" method="post" class="dropzone"id="my-awesome-dropzone">
+          
+        </form>
+
+        {% else %}
+          <div style="margin: 0 auto; left: 0;">
+            <div class="notification is-primary">
+              <h1 style="text-align: center;" class="subtitle">
+                Your account has been verified
+              </h1>
+            </div>
+          </div>
+         
+        {% endif %}
+      </div>
+      <button onclick="Modal('docs')"  class="modal-close is-large" aria-label="close"></button>
+
+    </section>
+    
+  </div>
+</div>
+
+

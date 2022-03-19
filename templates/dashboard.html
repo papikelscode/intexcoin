@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/assets/css/style.css">
+    <link rel="stylesheet" href="static/assets/js/table/jstable.css">
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://unpkg.com/dropzone@5/dist/min/dropzone.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/dropzone@5/dist/min/dropzone.min.css" type="text/css" />
+    <title>Intexcoin | Home</title>
+    <style>
+      :root {
+  --modal-duration: 1s;
+  --modal-color:  #070d2b;
+}
+.tradbtn{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5rem;
+}
+.buttony{
+font-size: 25px;
+background: var(--modal-color);
+color: #fff;
+text-transform: uppercase;
+padding: 10px;
+margin-top: 10px;
+width: 30%;
+box-shadow: 0px 0px 15px 0px #f2f5f3ad;
+
+}
+    .buttonx , .buttonxy{
+font-size: 25px;
+background: #26de81;
+color: #fff;
+text-transform: uppercase;
+padding: 10px;
+margin-top: 10px;
+width: 30%;
+box-shadow: 0px 0px 15px 0px #26de81ad;
+}
+.buttonxy{
+  background-color: red;
+}
+ .buttonx:hover {
+  background: whitesmoke;
+  color: black;
+}
+.buttonxy:hover{
+  background-color: whitesmoke;
+  color: #000;
+}
+.call {
+  display: none;
+  position: fixed;
+  
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.call-content {
+  margin: 10% auto;
+  width: 60%;
+  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.17);
+  animation-name: modalopen;
+  animation-duration: var(--modal-duration);
+  background-color: whitesmoke;
+}
+
+.call-header h2,
+.call-footer h3 {
+  margin: 0;
+}
+
+.call-header {
+  background: var(--modal-color);
+  padding: 15px;
+  color: #fff;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+.call-body{
+  background-color: whitesmoke;
+}
+.call-body  p {
+ 
+  font-size: 25px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+  ;
+margin-bottom: 2rem;
+background-color: #fff;
+
+}
+
+label{
+  font-size: 35px;
+  font-family: 'Times New Roman', Times, serif;
+}
+input{
+  margin-top: 1rem;
+  font-size: 20px;
+  width: 30rem;
+  height: 2rem;
+
+}
+.row{
+    display: flex;
+    flex-direction: row;
+}
+.column{
+    flex-basis: 0;
+  flex-grow: 1;
+  flex-shrink: 3;
+  padding: 0.75em;
+}
+
+.call-footer {
+  background: var(--modal-color);
+  padding: 10px;
+  color: #fff;
+  text-align: center;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+a{
+  text-decoration: none;
+}
+
+.close{
+  color: #ccc;
+  float: right;
+  font-size: 30px;
+  color: #fff;
+}
+.closex {
+  color: #ccc;
+  float: right;
+  font-size: 30px;
+  color: #fff;
+}
+/* .closex,.closex:hover,
+.closex, .closex:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+.close,.close:hover,
+.close, .close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+} */
+ .btnn{
+  text-decoration: none;
+  color: whitesmoke;
+} 
+.selectx{
+  margin-top: 1rem;
+  font-size: 20px;
+  width: 30rem;
+  height: 2rem;
+}
+#timer{
+  height: 2.5rem;
+  width: 110%;
+  background-color: var(--primarycolor);
+  color: whitesmoke;
+  box-shadow: 0px 0px 15px 0px #f2f5f3ad;
+  margin-top: 5%;
+  
+}
+:root{
+    /* --primarycolor: #C7AF88; */
+    --primarycolor: #070d2b;
+
+}
+
+#demo{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-left: 50%;
+      background-color: #070d2b;
+      color: #fff;
+      animation: modalopen;
+      transform: translate(-50%, -50%);
+      width: 20%;
+      height: 3rem;
+      font-size: 25px;
+      margin-top: 3%;
+
+
+    }
+    
+
+
+@keyframes modalopen {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+  @media only screen and (max-width:640px){
+    .call{
+      left: -50%;
+  margin-top: 1rem;
+  padding-bottom: 20%;
+  height: 100%;
+  width: 200%;
+  overflow: auto;
+    }
+    .call-content{
+      width: 50%;
+      
+    }
+    input{
+      width:10rem;
+    }
+    .selectx{
+      width: 10rem;
+    }
+    label{
+      font-size: 20px;
+    }
+    .row{
+    display: flex;
+    flex-direction: column;
+}
+.buttony{
+  height: 3.5rem;
+  width: 55%;
+}
+.buttonx{
+  height: 4.5rem;
+  width: 35%;
+}
+.buttonxy{
+  height: 4.5rem;
+  width: 40%;
+}
+option{
+  width: 15%;
+  font-size: 15px;
+}
+
+.preloader {
+        position:fixed;
+        top:0;
+        left:0;
+        right:0;
+        bottom:0;
+        background: white ; 
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        height: 100%;
+        z-index:99; /* makes sure it stays on top */
+    }
+    .loaded{
+        visibility: hidden;
+    }
+    
+
+    .progress__container{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 150px;
+        background-color: white;
+    }
+
+    .loadicon{
+        color: var(--primarycolor);
+    }
+
+    #progress_label{
+        color: var(--primarycolor);
+    }
+
+
+    .shownav{
+        display: block;
+    }
+
+    .is-activex{
+        display: block;
+    }
+    
+  }
+
+</style>
+</head>
+<body>
+  <div class="preloader" id="preloader">
+
+    <div class="progress__container">
+      <center>
+        <h4 id="progress_label">
+            <i style="color: darkgoldenrod;" class='bx bxl-bitcoin' ></i> <h2 id="bibasetext" class="title">Intexcoin</h2>
+        
+        </h4>
+        <progress id="progress" class="progress is-small" value="0" max="100">20%</progress>
+        
+      </center>
+    </div>
+  </div> 
+  
+    {% include "sidebar.html" %}
+    
+   {% include "header.html" %}
+   
+
+
+    <div class="body-container">
+      <p id="demo" ></p>
+    
+        <div class="container">
+          <div class="trad">
+            <script defer src="https://www.livecoinwatch.com/static/lcw-widget.js"></script> <div class="livecoinwatch-widget-5" lcw-base="USD" lcw-color-tx="#999999" lcw-marquee-1="coins" lcw-marquee-2="movers" lcw-marquee-items="10" ></div>
+           </div>
+          <div class="columns">
+
+            <div class="column">
+                <div style="height: 10rem; padding: .75rem;"  class="card">
+                  <div class="container">
+                      <div style="display: none;" id="notificationj" class="notification is-primary">
+                                <button class="delete"></button>
+                                <p id="alertmsgjljknk123"></p>
+                        </div>
+                  
+                    <h4 style="text-align: center;" class="title">
+                      ${{current_user.profit}}
+                    </h4>
+                    <p style="text-align: center;" class="subtitle">profit</p>
+
+                    <button onclick="Modal('userwallet')" style="width: 100%;" class="button signinbtn" >Withdraw
+                    
+                      <i class='bx bx-money' id="arrowj"></i>
+                  <i class='bx bx-loader-alt bx-spin bx-rotate-90' style="display: none;" id="spinj"></i>
+                    </button>
+                  </div>
+
+                  </div>
+            </div>
+
+            <div class="column">
+              <div style="height: 10rem; padding: .75rem;" class="card">
+                <div class="container">
+                  <h4 style="text-align: center;" class="title">
+                    ${{current_user.balance}}
+                  </h4>
+                  <p style="text-align: center;" class="subtitle">Balance</p>
+                  <button onclick="Modal('fundwallet')" style="width: 100%;" class="button signinbtn">
+                  Deposit
+                  </button>
+
+                </div>
+              </div>
+           </div>
+
+           <div class="column">
+            <div style="height: 10rem; padding: .75rem;"  class="card">
+              <div class="container">
+                <h4 style="text-align: center;"  class="title">
+                  {{total}}
+                </h4>
+                <p style="text-align: center;" class="subtitle">Total Balance</p>
+              </div>
+            </div>
+        </div>
+
+
+
+          </div>
+        </div>
+
+
+
+
+
+
+        
+        <div class="container">
+            <div class="columns multiline">
+              
+              {% for plan in userplan  %}
+
+                <div class="column">
+                  <div class="card">
+                    <header class="card-header">
+                      <p class="card-header-title">
+                        
+                        {{plan.plan}} (Active) ${{plan.plan_price}}
+
+                      </p>
+                      <a href="#" class="card-header-icon" aria-label="more options">
+                        <span class="icon">
+                          <i class="fas fa-angle-down" aria-hidden="true"></i>
+                        </span>
+                      </a>
+                    </header>
+                  
+
+          
+
+                      </div>
+                   
+  
+                  
+                  </div>
+
+                 </div>
+
+                 {% else %}
+
+
+                 <div class="bitcoin-container">
+                  <!-- TradingView Widget BEGIN-->
+<div class="tradingview-widget-container">
+<div id="tradingview_e1cb6"></div>
+<div class="tradingview-widget-copyright"><a href="#" rel="noopener" target="_blank"><span class="blue-text"></div>
+<script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+<script type="text/javascript">
+new TradingView.widget(
+{
+"width": 980,
+"height": 610,
+"symbol": "BINANCE:BTCUSDT",
+"interval": "D",
+"timezone": "Etc/UTC",
+"theme": "light",
+"style": "1",
+"locale": "en",
+"toolbar_bg": "#f1f3f6",
+"enable_publishing": false,
+"hide_side_toolbar": false,
+"allow_symbol_change": true,
+"watchlist": [
+"BINANCE:BTCUSDT",
+"BITSTAMP:BTCUSD",
+"COINBASE:BTCUSD",
+"BINANCE:ETHUSDT",
+"BINANCE:GRTUSDT"
+],
+"details": true,
+"hotlist": true,
+"studies": [
+"chandeMO@tv-basicstudies",
+"DetrendedPriceOscillator@tv-basicstudies",
+"DM@tv-basicstudies"
+],
+"container_id": "tradingview_e1cb6"
+}
+);
+</script>
+</div>
+<footer class="card-footer">
+  <a href="#" class="card-footer-item"><strong>ROI: ${{plan.plan_roi}}%</strong> </a>
+  <a href="#" class="card-footer-item">Rate: {{plan.plan_rate}} days</a>
+  
+</footer>
+<div class="tradbtn">
+  <button class="buttonx" id="call-btn" onclick="callModal();">Trade Up
+    <i class='bx bx-money' id="arrowj"></i>
+    <i class='bx bx-loader-alt bx-spin bx-rotate-90' style="display: none;" id="spinj"></i>
+  </button>
+  <button class="buttonxy" id="put-btn" onclick="putModal();">Trade Down
+    <i class='bx bx-money' id="arrowj"></i>
+    <i class='bx bx-loader-alt bx-spin bx-rotate-90' style="display: none;" id="spinj"></i>
+  </button>
+</div>
+
+<div id="call-modal" class="call">
+  <div class="call-content">
+    <div class="call-header">
+      <span class="close">&times;</span>
+      <h2>Do you want to place a CALL on this trade??</h2>
+    </div>
+    <div class="call-body">
+      <div class="row">
+        <div class="column">
+          <img src="static/assets/imgs/wallet.svg" alt="" srcset="">
+        </div>
+        <div class="column">
+          <form action="">
+            <h4>
+              Account Balance:    ${{total}}
+            </h4>
+            <h4>
+              Plan Package: <strong> {{plan.plan}} </strong>
+            </h4>
+         
+            
+            <select onchange="GetMarket()" class="selectx" name="" id="mktype" required>
+              <option value="" selected >Market type</option>
+              {% for mk in markets %}
+              <option value="{{mk.types}}">{{mk.types}}</option>
+              {% endfor %}
+            </select>
+            <select class="selectx" id="market" required>
+              <option value="">select market</option>
+            </select>
+
+            <div class="row">
+              <div class="column">
+                <button id="timer" class="two" onclick="timer()">2min</button>
+              </div>
+              <div class="column">
+                <button id="timer" class="five">5min</button>
+              </div>
+              <div class="column">
+                <button id="timer" class="twenty">20min</button>
+              </div>
+              <div class="column">
+                <button id="timer" class="thirty">30min</button>
+              </div>
+              <div class="column">
+                <button id="timer" class="one">1hour</button>
+              </div>
+              <div class="column">
+                <button id="timer" class="twox">2hour</button>
+              </div>
+            </div>
+            <input type="text" placeholder="Order Rate (Amount)" required>
+
+            <button class="buttony button" >
+              Submit
+              <i class='bx bx-money'></i>
+            </button>
+          </form>
+        </div>
+      </div>
+      
+    </div>
+    <div class="call-footer">
+      <h3>Intexcoin</h3>
+    </div>
+  </div>
+</div>
+<div id="put-modal" class="call">
+  <div class="call-content">
+    <div class="call-header">
+      <span class="closex">&times;</span>
+      <h2>Do you want to place a PUT on this trade???</h2>
+    </div>
+    <div class="call-body">
+      <div class="row">
+        <div class="column">
+          <img src="static/assets/imgs/wallet.svg" alt="" srcset="">
+        </div>
+        <div class="column">
+          <form action="">
+            <h4>
+              Account Balance:    ${{total}}
+            </h4>
+            <h4>
+              Plan Package: <strong> {{plan.plan}} </strong>
+            </h4>
+            <select onchange="GetMarketPut()" class="selectx" name=""  id="mktypex" required>
+              <option value="" selected>Market type</option>
+              {% for mk in markets %}
+              <option value="{{mk.types}}">{{mk.types}}</option>
+              {% endfor %}
+              </select>
+            <select class="selectx" name="" id="marketxxx" required>
+              <option value="">select market</option>
+            </select>
+
+          
+            <div class="row">
+              <div class="column">
+                <button id="timer" class="two" onclick="timer()">2min</button>
+              </div>
+              <div class="column">
+                <button id="timer" class="five">5min</button>
+              </div>
+              <div class="column">
+                <button id="timer" class="twenty">20min</button>
+              </div>
+              <div class="column">
+                <button id="timer" class="thirty">30min</button>
+              </div>
+              <div class="column">
+                <button id="timer" class="one">1hour</button>
+              </div>
+              <div class="column">
+                <button id="timer" class="twox">2hour</button>
+              </div>
+            </div>
+          
+            <input type="text" placeholder="Order Rate (Amount)" required>
+
+            <button class="buttony button" onchange="Run()" >
+              Submit
+               
+               
+              <i class='bx bx-money'></i>
+            </button>
+          </form>
+        </div>
+      </div>
+      
+    </div>
+    <div class="call-footer">
+      <h3>Intexcoin</h3>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                 <!-- <div class="column">
+                  <div class="card" onclick="Modal('modal')">
+                    <div class="container">
+                      <div class="choose">
+                        <i class='bx bx-layer-plus bx-fade-up' ></i>                 
+                        <h4>Choose one more from our Trading plan</h4>
+                      </div>
+                      </div>
+                  </div>
+  
+                 </div> -->
+
+              </div> 
+              {% endfor %}
+
+              
+
+
+                
+
+            
+
+                
+
+            </div>
+            <h3 class="title center" style="font-size: 30px; margin-left: -15%; margin-top: 3rem;">Transaction history</h3>
+            <table id="basic">
+              <thead>
+                  <tr>
+                      <th>Description</th>
+                      <th>Transaction type</th>
+                      <th>Amount</th>
+                      <th>Timestamp</th>
+                  </tr>
+              </thead>
+              <tbody>
+              {% for tx  in txs %}
+
+                <tr>
+                      <td>{{tx.description}}</td>
+                      <td>{{tx.txtype}}</td>
+                      {% if tx.cost %}
+                        <td>$ {{tx.cost}}</td>
+                      {% else %}
+                      <td>Not availaible</td>
+                      {% endif %}
+                      <td>{{tx.timestamp}}</td>
+                  </tr>
+              
+              {% endfor %}
+                  
+              </tbody>
+           </table>
+          
+        </div>
+
+    </div>
+
+
+
+
+
+    
+
+    {% include "walletmodal.html" %}
+
+<script>
+
+// Set the date we're counting down to
+var countDownDate = new Date("Jan 5, 2024 15:37:25").getTime();
+
+// Update the count down every 1 second
+var x = setInterval(function timer() {
+
+  // Get today's date and time
+  var now = new Date().getTime();
+
+  // Find the distance between now and the count down date
+  var distance = countDownDate - now;
+
+  // Time calculations for days, hours, minutes and seconds
+  
+  // var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 750));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  // Display the result in the element with id="demo"
+  document.getElementById("demo").innerHTML =  minutes + "m " + seconds + "s ";
+
+  // If the count down is finished, write some text
+  if (distance == 0) {
+    clearInterval(x);
+    document.getElementById("demo").innerHTML = "EXPIRED";
+  }
+}, 1000);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  function callModal(){
+     // Get DOM Elements
+const modal = document.querySelector('#call-modal');
+const modalBtn = document.querySelector('#call-btn');
+const closeBtn = document.querySelector('.close');
+
+// Events
+modalBtn.addEventListener('click', openModal);
+closeBtn.addEventListener('click', closeModal);
+window.addEventListener('click', outsideClick);
+
+// Open
+function openModal() {
+  modal.style.display = 'block';
+}
+// Close
+function closeModal() {
+  modal.style.display = 'none';
+}
+
+// Close If Outside Click
+function outsideClick(e) {
+  if (e.target == modal) {
+    modal.style.display = 'none';
+  }
+}
+}
+
+function putModal(){
+       // Get DOM Elements
+const modal = document.querySelector('#put-modal');
+const modalBtn = document.querySelector('#put-btn');
+const closeBtn = document.querySelector('.closex');
+
+// Events
+modalBtn.addEventListener('click', openModal);
+closeBtn.addEventListener('click', closeModal);
+window.addEventListener('click', outsideClick);
+
+// Open
+function openModal() {
+  modal.style.display = 'block';
+}
+// Close
+function closeModal() {
+  modal.style.display = 'none';
+}
+
+// Close If Outside Click
+function outsideClick(e) {
+  if (e.target == modal) {
+    modal.style.display = 'none';
+  }
+}
+}
+
+</script>
+<script>
+   let LoadStatus = 0;
+
+window.addEventListener('load',function(){
+  var loader = document.getElementById('preloader')
+  loader.classList.add("loaded")
+  LoadStatus +=1
+
+});
+
+
+let progressBAr = document.getElementById("progress")
+let progression = 0;
+
+
+progress = setInterval(function() 
+{
+    if(progression == 100 || LoadStatus == 1) {
+        clearInterval(progress);
+    } else
+        progression += 1;
+        document.getElementById("progress_label").textContent = progression+"%"
+        progressBAr.value = progression;
+    
+}, 1000);  
+
+function Total(x,y){
+        console.log("oi",x,y);
+        var label = document.getElementById('total')
+        label.innerText ='$'+x+y
+      }
+//       function Run(){
+//   var _S = document.getElementById("change");
+//   var s = _S.options[_S.selectedIndex].value;
+//   if (s == 1){
+//     var end = new Date('02/25/2021 00:00 AM' );
+
+//   }else if(s == 2 ){
+//     var end = new Date('02/22/2021 6:30 AM');
+//   }else if(s == 3 ){
+//     var end = new Date('02/20/2021 9:30 AM');
+//   }else if(s == 4 ){
+//     var end = new Date('02/19/2021 12:30 AM');
+//   }else if(s == 5 ){
+//     var end = new Date('02/15/2021 2:30 AM');
+//   }
+//   else if(s == 6 ){
+//     var end = new Date('02/10/2021 5:30 AM');
+//   }
+
+// var _second = 1000
+// var _minute = _second * 60;
+// var _hour = _minute *60;
+// var timer;
+
+// function showRemaining(){
+//   var now = new Date();
+//   var distance = end - now;
+   
+//   if (distance < 0){
+//     clearInterval(timer);
+//     document.getElementById("demo").innerHTML= "its out already";
+//     return;
+//   }
+//   var hour = Math.floor((distance % _hour) / _hour);
+//   var minutes = Math.floor((distance % _hour) / _minute);
+//   var seconds = Math.floor((distance % _minute)/ _second);
+  
+
+//   document.getElementById('demo').innerHTML = hour +'hour,'+ minutes + 'minutes,' + seconds + 'seconds.';
+// }
+// timer = setInterval(showRemaining, 1000);
+// console.log(timers);
+// if ( s == 1){
+//   document.getElementById('demo').innerHTML= "Dont select nothing";
+//   end;
+// }
+
+// }
+
+</script>    
+
+
+<script src="static/assets/js/count.js"></script>
+    <script src="static/assets/js/table/jstable.min.js"></script>
+    <script src="{{url_for("static",filename='assets/js/axios.min.js')}}"></script>
+    <script src="static/assets/js/dashboard.js"></script>
+    <script src="static/assets/js/custom.js"></script>
+    
+
+</body>
+</html>

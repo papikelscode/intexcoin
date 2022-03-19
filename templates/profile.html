@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/assets/css/style.css">
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <title>Intexcoin | Profile</title>
+</head>
+<body>
+        {% include "sidebar.html" %}
+
+    
+       {% include "header.html" %}
+
+
+    <div class="body-container">
+        <div class="container">
+            <div class="card">
+                <div class="columns">
+                    <div class="column">
+                        <img src="static/assets/imgs/illu/profiledata.svg" alt="" srcset="">
+                    </div>
+                    <div class="column">
+                        <div class="formcontainer">
+                            <div style="display: none;" id="notification" class="notification is-primary">
+                                      <button class="delete"></button>
+                                      <p id="alertmsg"></p>
+                                    </div>
+                            <h4>Basic info</h4>
+                            <div  style="width: 100%;"class="inputconatiner">
+                                <i class='bx bx-envelope'></i>
+                                  <input id="email" type="email" placeholder="{{current_user.email}}"  disabled>
+                              </div>
+                              <div style="width: 100%;" class="inputconatiner">
+                                <i class='bx bx-user' ></i>
+                                  <input id="bkid" type="text" placeholder="{{current_user.fullname}}" disabled>
+                              </div>
+                              <div style="width: 100%;" class="inputconatiner">
+                                <i class='bx bxs-user' ></i>
+                                  <input id="bkid" type="text" placeholder="{{current_user.username}}" disabled>
+                              </div>
+
+                              <h4 class="subtitle">Change password</h4>
+                              
+                              <div style="width: 100%;" class="inputconatiner">
+                                <i class='bx bx-hide' ></i>
+                                  <input id="bkid" type="text" placeholder="Current password" >
+                              </div>
+                              <div style="width: 100%;" class="inputconatiner">
+                                <i class='bx bx-hide' ></i>
+                                  <input id="bkid" type="text" placeholder="New password" >
+                              </div>
+                              <div style="width: 100%;" class="inputconatiner">
+                                <i class='bx bx-hide' ></i>
+                                  <input id="bkid" type="text" placeholder="Confirm password" >
+                              </div>
+          
+                            <div class="columns">
+                              <div class="column">
+                                <button style="width: 100%;" onclick="Subscribe()" class="button signinbtn">Change password
+                                  <i class='bx bx-right-arrow-alt' id="arrow" ></i>
+                                      <i class='bx bx-loader-alt bx-spin bx-rotate-90' style="display: none;" id="spin"></i>
+                                </button>
+                              </div>
+          
+                                </div>
+            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    
+
+
+    {% include "walletmodal.html" %}
+
+    
+    
+    <script src="{{url_for("static",filename='assets/js/axios.min.js')}}"></script>
+    <script src="static/assets/js/dashboard.js"></script>
+    <script src="static/assets/js/custom.js"></script>
+
+</body>
+</html>
