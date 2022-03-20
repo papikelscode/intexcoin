@@ -110,9 +110,13 @@ input{
   height: 2rem;
 
 }
-.row{
+.rowx{
     display: flex;
     flex-direction: row;
+}
+.row{
+  display: flex;
+  flex-direction: row;
 }
 .column{
     flex-basis: 0;
@@ -296,7 +300,13 @@ option{
     .is-activex{
         display: block;
     }
-    
+    .rowx{
+      flex-direction: row;
+      margin-left: -7%;
+    }
+    input{
+      width: 100%;
+    }
   }
 
 </style>
@@ -323,7 +333,7 @@ option{
 
 
     <div class="body-container">
-      <p id="demo" ></p>
+ 
     
         <div class="container">
           <div class="trad">
@@ -511,7 +521,7 @@ new TradingView.widget(
               <option value="">select market</option>
             </select>
 
-            <div class="row">
+            <div class="rowx">
               <div class="column">
                 <button id="timer" class="two" onclick="SetTime(00,02)">2min</button>
               </div>
@@ -527,13 +537,13 @@ new TradingView.widget(
               <div class="column">
                 <button id="timer" onclick="SetTime(01,00)" class="one">1hour</button>
               </div>
-              <div class="column">
-                <button id="timer" onclick="SetTime(02,00)" class="twox">2hour</button>
-              </div>
+              <!-- <div class="column">
+                <button id="timer" onclick="SetTime(02,00,00)" class="twox">2hour</button>
+              </div> -->
             </div>
-            <input type="text" placeholder="Order Rate (Amount)" required>
+            <input id="amt" type="text" placeholder="Order Rate (Amount)" required>
 
-            <a class="buttony button" href="/dashboard" >
+            <a class="buttony button" href="/call.html" >
               Submit
                
                
@@ -578,7 +588,7 @@ new TradingView.widget(
             </select>
 
           
-            <div class="row">
+            <div class="rowx">
               <div class="column">
                 <button id="timer" class="two" onclick="SetTime(00,02)">2min</button>
               </div>
@@ -594,13 +604,13 @@ new TradingView.widget(
               <div class="column">
                 <button id="timer" onclick="SetTime(01,00)" class="one">1hour</button>
               </div>
-              <div class="column">
+              <!-- <div class="column">
                 <button id="timer" onclick="SetTime(02,00)" class="twox">2hour</button>
-              </div>
+              </div> -->
             </div>
             <input type="text" placeholder="Order Rate (Amount)" required>
 
-            <a class="buttony button" href="/dashboard" >
+            <a class="buttony button" href="/call.html" >
               Submit
                
                
@@ -698,7 +708,7 @@ new TradingView.widget(
 
 <script>
 
-  const SetTime = (hr,min)=>{
+const SetTime = (hr,min)=>{
     localStorage.setItem('min',min)
     localStorage.setItem('hr',hr)
   }
@@ -733,14 +743,9 @@ var x = setInterval(function timer() {
   if (distance == 0) {
     clearInterval(x);
     ClearTime()
-    document.getElementById("demo").innerHTML = "EXPIRED";
+    alert("Refresh the page!!")
   }
 }, 1000);
-
-
-
-
-
 
 
 
