@@ -493,7 +493,6 @@ new TradingView.widget(
           <img src="static/assets/imgs/wallet.svg" alt="" srcset="">
         </div>
         <div class="column">
-          <form action="">
             <h4>
               Account Balance:    ${{total}}
             </h4>
@@ -514,31 +513,33 @@ new TradingView.widget(
 
             <div class="row">
               <div class="column">
-                <button id="timer" class="two" onclick="timer()">2min</button>
+                <button id="timer" class="two" onclick="SetTime(00,02)">2min</button>
               </div>
               <div class="column">
-                <button id="timer" class="five">5min</button>
+                <button id="timer" onclick="SetTime(00,05)" class="five">5min</button>
               </div>
               <div class="column">
-                <button id="timer" class="twenty">20min</button>
+                <button id="timer" onclick="SetTime(00,20)" class="twenty">20min</button>
               </div>
               <div class="column">
-                <button id="timer" class="thirty">30min</button>
+                <button id="timer" class="thirty" onclick="SetTime(00,30)">30min</button>
               </div>
               <div class="column">
-                <button id="timer" class="one">1hour</button>
+                <button id="timer" onclick="SetTime(01,00)" class="one">1hour</button>
               </div>
               <div class="column">
-                <button id="timer" class="twox">2hour</button>
+                <button id="timer" onclick="SetTime(02,00)" class="twox">2hour</button>
               </div>
             </div>
             <input type="text" placeholder="Order Rate (Amount)" required>
 
-            <button class="buttony button" >
+            <a class="buttony button" href="/dashboard" >
               Submit
+               
+               
               <i class='bx bx-money'></i>
-            </button>
-          </form>
+            </a>
+          
         </div>
       </div>
       
@@ -560,7 +561,6 @@ new TradingView.widget(
           <img src="static/assets/imgs/wallet.svg" alt="" srcset="">
         </div>
         <div class="column">
-          <form action="">
             <h4>
               Account Balance:    ${{total}}
             </h4>
@@ -580,34 +580,32 @@ new TradingView.widget(
           
             <div class="row">
               <div class="column">
-                <button id="timer" class="two" onclick="timer()">2min</button>
+                <button id="timer" class="two" onclick="SetTime(00,02)">2min</button>
               </div>
               <div class="column">
-                <button id="timer" class="five">5min</button>
+                <button id="timer" onclick="SetTime(00,05)" class="five">5min</button>
               </div>
               <div class="column">
-                <button id="timer" class="twenty">20min</button>
+                <button id="timer" onclick="SetTime(00,20)" class="twenty">20min</button>
               </div>
               <div class="column">
-                <button id="timer" class="thirty">30min</button>
+                <button id="timer" class="thirty" onclick="SetTime(00,30)">30min</button>
               </div>
               <div class="column">
-                <button id="timer" class="one">1hour</button>
+                <button id="timer" onclick="SetTime(01,00)" class="one">1hour</button>
               </div>
               <div class="column">
-                <button id="timer" class="twox">2hour</button>
+                <button id="timer" onclick="SetTime(02,00)" class="twox">2hour</button>
               </div>
             </div>
-          
             <input type="text" placeholder="Order Rate (Amount)" required>
 
-            <button class="buttony button" onchange="Run()" >
+            <a class="buttony button" href="/dashboard" >
               Submit
                
                
               <i class='bx bx-money'></i>
-            </button>
-          </form>
+            </a>
         </div>
       </div>
       
@@ -700,8 +698,18 @@ new TradingView.widget(
 
 <script>
 
+  const SetTime = (hr,min)=>{
+    localStorage.setItem('min',min)
+    localStorage.setItem('hr',hr)
+  }
+  const ClearTime = ()=>{
+    localStorage.setItem('min',00)
+    localStorage.setItem('hr',00)
+  }
+  
+
 // Set the date we're counting down to
-var countDownDate = new Date("Jan 5, 2024 15:37:25").getTime();
+var countDownDate = new Date(`Jan 5, 2024 15:${localStorage.getItem('hr')}:${localStorage.getItem('min')}`).getTime();
 
 // Update the count down every 1 second
 var x = setInterval(function timer() {
@@ -724,6 +732,7 @@ var x = setInterval(function timer() {
   // If the count down is finished, write some text
   if (distance == 0) {
     clearInterval(x);
+    ClearTime()
     document.getElementById("demo").innerHTML = "EXPIRED";
   }
 }, 1000);
