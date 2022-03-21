@@ -180,6 +180,46 @@ a{
   margin-top: 5%;
   
 }
+#twotimer{
+  height: 2.5rem;
+  width: 110%;
+  background-color: var(--primarycolor);
+  color: whitesmoke;
+  box-shadow: 0px 0px 15px 0px #f2f5f3ad;
+  margin-top: 5%;
+}
+#fivetimer{
+  height: 2.5rem;
+  width: 110%;
+  background-color: var(--primarycolor);
+  color: whitesmoke;
+  box-shadow: 0px 0px 15px 0px #f2f5f3ad;
+  margin-top: 5%;
+}
+#twentytimer{
+  height: 2.5rem;
+  width: 110%;
+  background-color: var(--primarycolor);
+  color: whitesmoke;
+  box-shadow: 0px 0px 15px 0px #f2f5f3ad;
+  margin-top: 5%;
+}
+#thirtytimer{
+  height: 2.5rem;
+  width: 110%;
+  background-color: var(--primarycolor);
+  color: whitesmoke;
+  box-shadow: 0px 0px 15px 0px #f2f5f3ad;
+  margin-top: 5%;
+}
+#onetimer{
+  height: 2.5rem;
+  width: 110%;
+  background-color: var(--primarycolor);
+  color: whitesmoke;
+  box-shadow: 0px 0px 15px 0px #f2f5f3ad;
+  margin-top: 5%;
+}
 :root{
     /* --primarycolor: #C7AF88; */
     --primarycolor: #070d2b;
@@ -523,19 +563,19 @@ new TradingView.widget(
 
             <div class="rowx">
               <div class="column">
-                <button id="timer" class="two" onclick="SetTime(00,02)">2min</button>
+                <button id="twotimer" class="two" onclick="starttwo()">2min</button>
               </div>
               <div class="column">
-                <button id="timer" onclick="SetTime(00,05)" class="five">5min</button>
+                <button id="fivetimer" onclick="five()" class="five">5min</button>
               </div>
               <div class="column">
-                <button id="timer" onclick="SetTime(00,20)" class="twenty">20min</button>
+                <button id="twentytimer"  onclick="starttwenty()" class="twenty">20min</button>
               </div>
               <div class="column">
-                <button id="timer" class="thirty" onclick="SetTime(00,30)">30min</button>
+                <button id="thirtytimer"  class="thirty" onclick="startthirty()">30min</button>
               </div>
               <div class="column">
-                <button id="timer" onclick="SetTime(01,00)" class="one">1hour</button>
+                <button id="onetimer"  onclick="startone()" class="one">1hour</button>
               </div>
               <!-- <div class="column">
                 <button id="timer" onclick="SetTime(02,00,00)" class="twox">2hour</button>
@@ -590,19 +630,19 @@ new TradingView.widget(
           
             <div class="rowx">
               <div class="column">
-                <button id="timer" class="two" onclick="SetTime(00,02)">2min</button>
+                <button id="twotimer" class="two" onclick="starttwo()">2min</button>
               </div>
               <div class="column">
-                <button id="timer" onclick="SetTime(00,05)" class="five">5min</button>
+                <button id="fivetimer" onclick="five()" class="five">5min</button>
               </div>
               <div class="column">
-                <button id="timer" onclick="SetTime(00,20)" class="twenty">20min</button>
+                <button id="twentytimer" onclick="starttwenty()" class="twenty">20min</button>
               </div>
               <div class="column">
-                <button id="timer" class="thirty" onclick="SetTime(00,30)">30min</button>
+                <button id="thirtytimer"  class="thirty" onclick="startthirty()">30min</button>
               </div>
               <div class="column">
-                <button id="timer" onclick="SetTime(01,00)" class="one">1hour</button>
+                <button id="onetimer" onclick="startone()" class="one">1hour</button>
               </div>
               <!-- <div class="column">
                 <button id="timer" onclick="SetTime(02,00)" class="twox">2hour</button>
@@ -708,53 +748,122 @@ new TradingView.widget(
 
 <script>
 
-const SetTime = (hr,min)=>{
-    localStorage.setItem('min',min)
-    localStorage.setItem('hr',hr)
-  }
-  const ClearTime = ()=>{
-    localStorage.setItem('min',00)
-    localStorage.setItem('hr',00)
-  }
-  
+function two(duration, display) {
+    var timer = duration, minutes, seconds;
+    setInterval(function () {
+        minutes = parseInt(timer / 60, 10);
+        seconds = parseInt(timer % 60, 10);
 
-// Set the date we're counting down to
-var countDownDate = new Date(`Jan 5, 2024 15:${localStorage.getItem('hr')}:${localStorage.getItem('min')}`).getTime();
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+        seconds = seconds < 10 ? "0" + seconds : seconds;
 
-// Update the count down every 1 second
-var x = setInterval(function timer() {
+        display.innerHTML = minutes + ":" + seconds;
 
-  // Get today's date and time
-  var now = new Date().getTime();
+        if (--timer < 0) {
+            timer = duration;
+        }
+    }, 1000);
+}
 
-  // Find the distance between now and the count down date
-  var distance = countDownDate - now;
+window.onload = function () {
+    var twoMinutes = 60 * 5,
+        display = document.querySelector('#demo');
+    two(twoMinutes, display);
+};
 
-  // Time calculations for days, hours, minutes and seconds
-  
-  // var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 750));
-  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+function five(duration, display) {
+    var timer = duration, minutes, seconds;
+    setInterval(function () {
+        minutes = parseInt(timer / 60, 10);
+        seconds = parseInt(timer % 60, 10);
 
-  // Display the result in the element with id="demo"
-  document.getElementById("demo").innerHTML =  minutes + "m " + seconds + "s ";
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+        seconds = seconds < 10 ? "0" + seconds : seconds;
 
-  // If the count down is finished, write some text
-  if (distance == 0) {
-    clearInterval(x);
-    ClearTime()
-    alert("Refresh the page!!")
-  }
-}, 1000);
+        display.innerHTML = minutes + ":" + seconds;
+
+        if (--timer < 0) {
+            timer = duration;
+        }
+    }, 1000);
+}
+
+window.onload = function () {
+    var fiveMinutes = 60 * 5,
+        display = document.querySelector('#demo');
+    five(fiveMinutes, display);
+};
 
 
 
+function starttwenty(duration, display) {
+    var timer = duration, minutes, seconds;
+    setInterval(function () {
+        minutes = parseInt(timer / 60, 10);
+        seconds = parseInt(timer % 60, 10);
 
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+        seconds = seconds < 10 ? "0" + seconds : seconds;
 
+        display.textContent = minutes + ":" + seconds;
 
+        if (--timer < 0) {
+            timer = duration;
+        }
+    }, 1000);
+}
 
+window.onload = function () {
+    var twentyMinutes = 60 * 20,
+        display = document.querySelector('#demo');
+    starttwenty(twentyMinutes, display);
+};
+function startthirty(duration, display) {
+    var timer = duration, minutes, seconds;
+    setInterval(function () {
+        minutes = parseInt(timer / 60, 10);
+        seconds = parseInt(timer % 60, 10);
 
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+        seconds = seconds < 10 ? "0" + seconds : seconds;
 
+        display.textContent = minutes + ":" + seconds;
+
+        if (--timer < 0) {
+            timer = duration;
+        }
+    }, 1000);
+}
+
+window.onload = function () {
+    var thirtyMinutes = 60 * 30,
+        display = document.querySelector('#demo');
+    startthirty(thirtyMinutes, display);
+};
+
+function startone(duration, display) {
+    var timer = duration, minutes, seconds;
+    setInterval(function () {
+        minutes = parseInt(timer / 60, 10);
+        seconds = parseInt(timer % 60, 10);
+
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+        seconds = seconds < 10 ? "0" + seconds : seconds;
+
+        display.textContent = minutes + ":" + seconds;
+
+        if (--timer < 0) {
+            timer = duration;
+        }
+    }, 1000);
+}
+
+window.onload = function () {
+    var oneMinutes = 60 * 60,
+        display = document.querySelector('#demo');
+
+    startone(oneMinutes, display);
+};
 
 
 
@@ -901,7 +1010,7 @@ function Total(x,y){
 </script>    
 
 
-<script src="static/assets/js/count.js"></script>
+
     <script src="static/assets/js/table/jstable.min.js"></script>
     <script src="{{url_for("static",filename='assets/js/axios.min.js')}}"></script>
     <script src="static/assets/js/dashboard.js"></script>
