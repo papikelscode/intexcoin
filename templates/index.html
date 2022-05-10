@@ -11,8 +11,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-    <title>Intexcoin | Home</title>
+    <title>Standardcoinoption | Home</title>
     <style>
+      body{
+        background-color: black;
+        color: whitesmoke;
+      }
       
       .middle-section{
   margin-left: 10%;
@@ -20,7 +24,7 @@
 .middle-section .ways{
   font-size: 40px;
   text-align: center;
-  color:navy;
+  color:whitesmoke;
   font-weight: 600;
   margin-top: 40px;
   font-family: 'alice', display;
@@ -28,7 +32,7 @@
 .icon{
   width: 30px;
   height: 30px;
-  background-color: blue;
+  background-color: goldenrod;
   color: whitesmoke;
   border-radius: 100%;
   font-size: 20px;
@@ -54,23 +58,102 @@
 .middle-section h2{
   font-family: 'blackopps', display;
   font-size: 35px;
-  color: black;
+  color: goldenrod;
   font-weight: 300;
   font-stretch: extra-expanded;
 
 }
 .middle-section h3{
     font-family: 'Candal', sans-serif;
-    color: #000;
+    color: whitesmoke;
     
 }
-#content-icon{
-  width: 10px;
+#content-icon img{
+  width: 50px;
+}
+.certi{
+  font-size: 40px;
+  font-weight: 500;
+  font-family:'Times New Roman', Times, serif;
+}
+#gett{
+
+/* From cssbuttons.io */
+
+padding: 1em 1em;
+font-size: 25px;
+width: 35%;
+letter-spacing: 2.5px;
+font-weight: 100;
+color: #000;
+background-color: goldenrod;
+border: none;
+border-radius: 45px;
+box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+transition: all 0.3s ease 0s;
+cursor: pointer;
+outline: none;
+height: 4rem;
+}
+
+#gett:hover {
+background-color: whitesmoke;
+box-shadow: 0px 15px 20px #ddd(46, 229, 157, 0.4);
+color: black;
+transform: translateY(-7px);
+
+
+}
+#getbtn{
+  padding: 1em 1em;
+font-size: 25px;
+width: 35%;
+letter-spacing: 2.5px;
+font-weight: 100;
+color: #000;
+background-color: goldenrod;
+border: none;
+border-radius: 45px;
+box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+transition: all 0.3s ease 0s;
+cursor: pointer;
+outline: none;
+height: 4rem;
+}
+#getbtn:hover {
+background-color: whitesmoke;
+box-shadow: 0px 15px 20px #ddd(46, 229, 157, 0.4);
+color: black;
+transform: translateY(-7px);
+
+
+}
+#getbtnx{
+  padding: 1em 1em;
+font-size: 25px;
+width: 50%;
+font-weight: 100;
+color: #000;
+background-color: whitesmoke;
+
+box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+transition: all 0.3s ease 0s;
+cursor: pointer;
+outline: none;
+height: 2.5rem;
+}
+#getbtnx:hover {
+background-color: goldenrod;
+box-shadow: 0px 15px 20px #ddd(46, 229, 157, 0.4);
+color: black;
+transform: translateY(-7px);
+
+
 }
 
 @media only screen and (max-width:960px){
 .ways{
-  font-size: 20px;
+  font-size: 30px;
 }
 .foto-img{
   width: 3rem;
@@ -98,6 +181,20 @@ section .card{
   width: 35%;
   font-size: 20px;
 }
+#getbtn{
+  width: 100%;
+}
+#gett{
+  width: 100%;
+}
+.certi{
+  font-size: 30px;
+  text-align: center;
+  justify-content: center;
+}
+#getbtnx{
+  width: 100%;
+}
 }
 
     </style>
@@ -105,23 +202,25 @@ section .card{
 <body>
     {% include "nav.html" %}
 
-    <div class="preloader" id="preloader">
+    <!-- <div class="preloader" id="preloader">
      
       <div class="progress__container" >
         <center>
           <h4 id="progress_label">
-              <!-- <i style="color: darkgoldenrod;" class='bx bxl-bitcoin' ></i>--> <h2 id="bibasetext" class="title">Intexcoin</h2>
+              <i style="color: darkgoldenrod;" class='bx bxl-bitcoin' ></i> <h2 id="bibasetext" class="title">Standardcoinoption</h2>
           
-          </h4>
+          <!-- </h4>
           <progress id="progress" class="progress is-small" value="0" max="100">20%</progress>
           
         </center>
       </div>
-    </div> 
-  
+    </div>  
+   -->
 
 
-
+   <div class="trad">
+    <script defer src="https://www.livecoinwatch.com/static/lcw-widget.js"></script> <div class="livecoinwatch-widget-5" lcw-base="USD" lcw-color-tx="#999999" lcw-marquee-1="coins" lcw-marquee-2="movers" lcw-marquee-items="10" ></div>
+   </div>
     <section class="hero banner is-medium">
 
         <div id="particles-js"></div>
@@ -135,21 +234,21 @@ section .card{
                   <h1 style="color: whitesmoke;" class="title textwhite animate__animated animate__bounce">
                     SECURE AND FAST TRADING PLATFORM 
                   </h1>
-                  <p class="textwhite">
+                  <p class="textwhite" style="font-size: 18px;">
                     We’re reinventing the global equity blockchian
                     Looking for highest returns on your trads?
-                    Intexcoin is made so even traders with zero trading experience are successfully making a profit. Our program, unlike any other, guarantees fix hourly interest for traders regardless of market conditions.
+                    Standardcoinoption is made so even traders with zero trading experience are successfully making a profit. Our program, unlike any other, guarantees fix hourly interest for traders regardless of market conditions.
                   </p>
                   <br>
                   {% if current_user.is_authenticated %}
-                    <div class="calltoaction">
-                      <a href="/dashboard" class="button learnmore">Dashboard</a>
-                      <a href="/logout" class="button investnow">Logout</a>
+                    <div  class="calltoaction">
+                      <a id="getbtn" href="/dashboard" class="button learnmore">Dashboard</a>
+                      <a id="getbtn" href="/logout" class="button investnow">Logout</a>
                     </div>
                 {% else %}
-                    <div class="calltoaction">
-                      <a href="/signup" class="button learnmore">Register here</a>
-                      <a href="/signin" class="button investnow">Login here</a>
+                    <div  class="calltoaction">
+                      <a id="getbtn" href="/signup" class="button learnmore">Register here</a>
+                      <a  id="getbtn"href="/signin" class="button investnow">Login here</a>
                     </div>
                   {% endif %}
                   
@@ -170,18 +269,21 @@ section .card{
 
     <div class="container section2">
         <div class="columns">
-            <div class="column" data-aos="fade-up">
-                <h1 class="title  textcentered">
-                    What is Intexcoin 
+            <div  class="column" data-aos="fade-up">
+                <h1 style="color:goldenrod" class="title  textcentered">
+                    What is Standardcoinoption 
                 </h1>
-                  <p class="subtitle">
-                  Intexcoin is an advanced trading platform based in the UK. It was established 2016. We are strictly into trading, mining  in paid adverts. Our vision is to build a strong alliance and everlasting partnership with our traders , also leading them to financial independence.
+                  <p class="subtitle" style="color:whitesmoke"> 
+                  Standardcoinoption  is an advanced trading platform based in the UK. It was established 2016. We are strictly into trading, mining  in paid adverts. Our vision is to build a strong alliance and everlasting partnership with our traders , also leading them to financial independence.
+
+                  
+
                 </p>
 
 
                 
 
-                <a href="" class="button bibasebtn">Get started</a>
+                <a id="gett" href="" class="button bibasebtn">Get started</a>
 
 
                 <div class="iluconatiner">
@@ -199,13 +301,23 @@ section .card{
 
                 </div>
 
-                <h1 class="title textcentered">
+                <h1 style="color:goldenrod" class="title textcentered">
                     Investing with Intexcoin
                 </h1>
                 <p>
              Cryptocurrency & Forex Trading Platform - is an officially registered, legitimate company. You can check the number of service license to verify the legality of the services we provide.                 
                 </p>
             </div>
+        </div>
+        <div  class="column" data-aos="fade-up">
+          <h1 class="certi" style="color:whitesmoke"> 
+            <b> Check out our Certificate of Investment </b> <br>
+            <a id="gett" href="../static/assets/imgs/WhatsApp Image 2022-05-07 at 10.14.23 AM.jpeg" class="button bibasebtn">Certificate</a>
+
+           
+            </button>
+
+          </h1>
         </div>
     </div>
 
@@ -231,6 +343,8 @@ section .card{
             <h3>
               Registration takes less <br>than a minute
             </h3>
+            <a id="getbtnx" href="/signup" class="button learnmore">Register here</a>
+
           </div>
         </div>
         <div class="column">
@@ -240,24 +354,22 @@ section .card{
           <div class="content">
             <h2>Fund your account</h2>
             <h3>Transfer funds to your trading account and start trading</h3>
-            <div id="row">
+            <div  class="row">
               <div id="content-icon"  class="column">
-                <img src="https://img.icons8.com/ios/50/000000/visa.png"/>
+                <img src="../static/assets/imgs/icons8-bank-48.png" alt="">
               </div>
               <div id="content-icon"  class="column">
-                <img src="https://img.icons8.com/color/48/000000/bank-card-back-side.png"/>
+                  <img src="../static/assets/imgs/icons8-no-credit-cards-50.png" alt="">
               </div>
               <div id="content-icon"  class="column">
-                <img src="https://img.icons8.com/color/48/000000/bitcoin--v1.png"/>
+                <img src="../static/assets/imgs/icons8-paypal-48.png" alt="">
               </div>
               <div id="content-icon" class="column">
-                <img src="https://img.icons8.com/color/48/000000/paypal.png"/>
-              </div>
-              <div id="content-icon"  class="column">
-                <img src="https://img.icons8.com/fluency/48/000000/flutter.png"/>
-              </div>
-            </div>
+                <img src="../static/assets/imgs/icons8-bitcoin-48.png" alt="">
+
+                 </div>
           </div>
+        </div>
         </div>
         <div class="column">
           <div class="icon">3</div>
@@ -276,23 +388,23 @@ section .card{
     <section class="container section2">
       <div class="columns">
         <div class="column">
-          <h1 class="title value" akhi="6870"></h1>
-          <p class="subtitle">Total Traders</p>
+          <h1 style="color: whitesmoke; text-align: center;" class="title value" akhi="6870"></h1>
+          <p class="subtitle" style="color: whitesmoke;text-align: center;">Total Traders</p>
         </div>
 
         <div class="column">
-          <h1 class="title value" akhi="5787">0</h1>
-          <p class="subtitle">Total Withdraw</p>
+          <h1 style="color: whitesmoke;text-align: center;" class="title value" akhi="5787">0</h1>
+          <p class="subtitle" style="color: whitesmoke;text-align: center;">Total Withdraw</p>
         </div>
 
         <div class="column">
-          <h1 class="title value" akhi="72850"></h1>
-          <p class="subtitle">Deposited</p>
+          <h1 style="color: whitesmoke;text-align: center;" class="title value" akhi="72850"></h1>
+          <p style="color: whitesmoke;text-align: center;" class="subtitle">Deposited</p>
         </div>
 
         <div class="column">
-          <h1 class="title value" akhi="{{activeusers}}">0</h1>
-          <p class="subtitle">Active users</p>
+          <h1 style="color: whitesmoke;text-align: center;" class="title value" akhi="{{activeusers}}">0</h1>
+          <p style="color: whitesmoke;text-align: center;" class="subtitle">Active users</p>
         </div>
       </div>
   </section>
@@ -312,9 +424,9 @@ section .card{
                 crypt_single_base_currency = "Dogecoin (DOGE)";crypt_single_target_currency = "US Dollar (USD)";crypt_single_background_color = "black";crypt_single_border_width = 3;crypt_single_font_color = "whitesmoke";</script><script type="text/javascript" src="https://www.cryptonator.com/ui/js/widget/single_widget.js"></script>
   
          </div>
-         <div class="column">
-          <div style="width: 250px; height:335px; background-color: #FAFAFA; overflow:hidden; box-sizing: border-box; border: 1px solid #56667F; border-radius: 4px; text-align: right; line-height:14px; block-size:335px; font-size: 12px; font-feature-settings: normal; text-size-adjust: 100%; box-shadow: inset 0 -20px 0 0 #56667F;margin: 0;width: 250px;padding:1px;padding: 0px; margin: 0px;"><div style="height:315px; padding:0px; margin:0px; width: 100%;"><iframe src="https://widget.coinlib.io/widget?type=converter&theme=light" width="250" height="310px" scrolling="auto" marginwidth="0" marginheight="0" frameborder="0" border="0" style="border:0;margin:0;padding:0;"></iframe></div><div style="color: #FFFFFF; line-height: 14px; font-weight: 400; font-size: 11px; box-sizing: border-box; padding: 2px 6px; width: 100%; font-family: Verdana, Tahoma, Arial, sans-serif;"><a href="#" target="_blank" style="font-weight: 500; color: #FFFFFF; text-decoration:none; font-size:11px"></div></div>
-         </div>
+         <!-- <div class="column">
+          <div style="width: 200px; height:335px; background-color: #FAFAFA; overflow:hidden; box-sizing: border-box; border: 1px solid #56667F; border-radius: 4px; text-align: right; line-height:14px; block-size:335px; font-size: 12px; font-feature-settings: normal; text-size-adjust: 100%; box-shadow: inset 0 -20px 0 0 #56667F;margin: 0;width: 250px;padding:1px;padding: 0px; margin: 0px;"><div style="height:315px; padding:0px; margin:0px; width: 100%;"><iframe src="https://widget.coinlib.io/widget?type=converter&theme=light" width="250" height="310px" scrolling="auto" marginwidth="0" marginheight="0" frameborder="0" border="0" style="border:0;margin:0;padding:0;"></iframe></div><div style="color: #FFFFFF; line-height: 14px; font-weight: 400; font-size: 11px; box-sizing: border-box; padding: 2px 6px; width: 100%; font-family: Verdana, Tahoma, Arial, sans-serif;"><a href="#" target="_blank" style="font-weight: 500; color: #FFFFFF; text-decoration:none; font-size:11px"></div></div>
+         </div> -->
        </div>
     
     </div>
@@ -323,7 +435,7 @@ section .card{
   
 
     <section class="container section2">
-        <h1 data-aos="flip-left" class="title textcentered">Our investment plan</h1>
+        <h1 data-aos="flip-left" class="title textcentered" style="color: goldenrod;">Our investment plan</h1>
           <div  class="carousel" id="carousel-demo">
             
              

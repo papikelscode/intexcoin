@@ -11,6 +11,9 @@
     <link rel="stylesheet" href="https://unpkg.com/dropzone@5/dist/min/dropzone.min.css" type="text/css" />
     <title>Intexcoin | Home</title>
     <style>
+      body{
+        background-color: #000;
+      }
       :root {
   --modal-duration: 1s;
   --modal-color:  #070d2b;
@@ -242,7 +245,24 @@ a{
 
 
     }
-    
+    th{
+    color: whitesmoke;
+}
+td{
+    color: whitesmoke;
+}
+
+    .card{
+      background-color: goldenrod;
+      
+    }
+    #title{
+      color: whitesmoke;
+    }
+    .signinbtn{
+      background-color: #000;
+    }
+  
 
 
 @keyframes modalopen {
@@ -347,12 +367,15 @@ option{
     input{
       width: 100%;
     }
+    .title{
+      font-size: 25px;
+    }
   }
 
 </style>
 </head>
 <body>
-  <div class="preloader" id="preloader">
+  <!-- <div class="preloader" id="preloader">
 
     <div class="progress__container">
       <center>
@@ -364,7 +387,7 @@ option{
         
       </center>
     </div>
-  </div> 
+  </div>  -->
   
     {% include "sidebar.html" %}
     
@@ -389,12 +412,12 @@ option{
                                 <p id="alertmsgjljknk123"></p>
                         </div>
                   
-                    <h4 style="text-align: center;" class="title">
+                    <h4 style="text-align: center;" class="title" id="title" style="color: whitesmoke;">
                       ${{current_user.profit}}
                     </h4>
-                    <p style="text-align: center;" class="subtitle">profit</p>
+                    <p style="text-align: center;" class="subtitle" id="title">profit</p>
 
-                    <button onclick="Modal('userwallet')" style="width: 100%;" class="button signinbtn" >Withdraw
+                    <button onclick="Modal('userwallet')" style="width: 100%;" class="button signinbtn" id="title">Withdraw
                     
                       <i class='bx bx-money' id="arrowj"></i>
                   <i class='bx bx-loader-alt bx-spin bx-rotate-90' style="display: none;" id="spinj"></i>
@@ -407,10 +430,10 @@ option{
             <div class="column">
               <div style="height: 10rem; padding: .75rem;" class="card">
                 <div class="container">
-                  <h4 style="text-align: center;" class="title">
+                  <h4 style="text-align: center;" class="title" id="title">
                     ${{current_user.balance}}
                   </h4>
-                  <p style="text-align: center;" class="subtitle">Balance</p>
+                  <p style="text-align: center;" class="subtitle" id="title">Balance</p>
                   <button onclick="Modal('fundwallet')" style="width: 100%;" class="button signinbtn">
                   Deposit
                   </button>
@@ -422,10 +445,10 @@ option{
            <div class="column">
             <div style="height: 10rem; padding: .75rem;"  class="card">
               <div class="container">
-                <h4 style="text-align: center;"  class="title">
+                <h4 id="title" style="text-align: center;"  class="title">
                   {{total}}
                 </h4>
-                <p style="text-align: center;" class="subtitle">Total Balance</p>
+                <p id="title" style="text-align: center;" class="subtitle">Total Balance</p>
               </div>
             </div>
         </div>
@@ -516,8 +539,8 @@ new TradingView.widget(
 </script>
 </div>
 <footer class="card-footer">
-  <a href="#" class="card-footer-item"><strong>ROI: ${{plan.plan_roi}}%</strong> </a>
-  <a href="#" class="card-footer-item">Rate: {{plan.plan_rate}} days</a>
+  <a href="#" class="card-footer-item" style="color: whitesmoke;"><strong>ROI: ${{plan.plan_roi}}%</strong> </a>
+  <a href="#" class="card-footer-item" style="color: whitesmoke;">Rate: {{plan.plan_rate}} days</a>
   
 </footer>
 <div class="tradbtn">
@@ -561,7 +584,7 @@ new TradingView.widget(
               <option value="">select market</option>
             </select>
 
-            <div class="rowx">
+            <!-- <div class="rowx">
               <div class="column">
                 <button id="twotimer" class="two" onclick="starttwo()">2min</button>
               </div>
@@ -580,7 +603,7 @@ new TradingView.widget(
               <!-- <div class="column">
                 <button id="timer" onclick="SetTime(02,00,00)" class="twox">2hour</button>
               </div> -->
-            </div>
+          <!--  </div> -->
             <input id="amt" type="text" placeholder="Order Rate (Amount)" required>
 
             <a class="buttony button" href="/call.html" >
@@ -594,9 +617,7 @@ new TradingView.widget(
       </div>
       
     </div>
-    <div class="call-footer">
-      <h3>Intexcoin</h3>
-    </div>
+    
   </div>
 </div>
 <div id="put-modal" class="call">
@@ -628,7 +649,7 @@ new TradingView.widget(
             </select>
 
           
-            <div class="rowx">
+            <!-- <div class="rowx">
               <div class="column">
                 <button id="twotimer" class="two" onclick="starttwo()">2min</button>
               </div>
@@ -647,7 +668,7 @@ new TradingView.widget(
               <!-- <div class="column">
                 <button id="timer" onclick="SetTime(02,00)" class="twox">2hour</button>
               </div> -->
-            </div>
+            <!--</div> -->
             <input type="text" placeholder="Order Rate (Amount)" required>
 
             <a class="buttony button" href="/call.html" >
@@ -660,9 +681,7 @@ new TradingView.widget(
       </div>
       
     </div>
-    <div class="call-footer">
-      <h3>Intexcoin</h3>
-    </div>
+    
   </div>
 </div>
 
@@ -705,28 +724,28 @@ new TradingView.widget(
                 
 
             </div>
-            <h3 class="title center" style="font-size: 30px; margin-left: -15%; margin-top: 3rem;">Transaction history</h3>
-            <table id="basic">
+            <h3 class="title center" style="font-size: 30px; margin-left: -15%; margin-top: 3rem; color: whitesmoke;">Transaction history</h3>
+            <table id="basic" style="color: whitesmoke;">
               <thead>
-                  <tr>
-                      <th>Description</th>
-                      <th>Transaction type</th>
-                      <th>Amount</th>
-                      <th>Timestamp</th>
+                  <tr style="color: whitesmoke;">
+                      <th style="color: whitesmoke;">Description</th>
+                      <th style="color: whitesmoke;">Transaction type</th>
+                      <th style="color: whitesmoke;" style="color: whitesmoke;">Amount</th>
+                      <th style="color: whitesmoke;">Timestamp</th>
                   </tr>
               </thead>
-              <tbody>
+              <tbody style="color: whitesmoke;">
               {% for tx  in txs %}
 
                 <tr>
-                      <td>{{tx.description}}</td>
-                      <td>{{tx.txtype}}</td>
+                      <td style="color: whitesmoke;">{{tx.description}}</td>
+                      <td style="color: whitesmoke;">{{tx.txtype}}</td>
                       {% if tx.cost %}
-                        <td>$ {{tx.cost}}</td>
+                        <td style="color: whitesmoke;">$ {{tx.cost}}</td>
                       {% else %}
-                      <td>Not availaible</td>
+                      <td style="color: whitesmoke;"> Not availaible</td>
                       {% endif %}
-                      <td>{{tx.timestamp}}</td>
+                      <td style="color: whitesmoke;">{{tx.timestamp}}</td>
                   </tr>
               
               {% endfor %}
