@@ -9,7 +9,7 @@
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script src="https://unpkg.com/dropzone@5/dist/min/dropzone.min.js"></script>
     <link rel="stylesheet" href="https://unpkg.com/dropzone@5/dist/min/dropzone.min.css" type="text/css" />
-    <title>Intexcoin | Home</title>
+    <title>Standardcoinoption | Home</title>
     <style>
       body{
         background-color: #000;
@@ -23,6 +23,16 @@
   align-items: center;
   justify-content: center;
   gap: 5rem;
+}
+.row{
+    display: flex;
+    flex-direction: row;
+}
+.column{
+    flex-basis: 0;
+  flex-grow: 1;
+  flex-shrink: 3;
+  padding: 0.75em;
 }
 .buttony{
 font-size: 25px;
@@ -262,8 +272,38 @@ td{
     .signinbtn{
       background-color: #000;
     }
+    #price{
+      margin-left: 100%;
+      margin-top: -70%;
+      font-size: 32px;
+      margin-bottom: 20%;
+  color: whitesmoke;
+  background-color: goldenrod;
+  height: 15rem;
+  width: 50%;
+    }
+  #chat{
+    padding-top: -30%;
+  }
+  .trans{
+    margin-top: 10%;
+  }
+#covent{
+  margin-left: 120%;
+      margin-bottom: 3%;
+}
+#pse{
+  margin-left: 120%;
+  margin-top: -20%;
+}
+#price h3{
+  margin-left: 5%;
+  font-size: 32px;
   
-
+}
+#price h2{
+  font-size: 25px;
+}
 
 @keyframes modalopen {
   from {
@@ -304,11 +344,11 @@ td{
   width: 55%;
 }
 .buttonx{
-  height: 4.5rem;
+  height: 5rem;
   width: 35%;
 }
 .buttonxy{
-  height: 4.5rem;
+  height: 5rem;
   width: 40%;
 }
 option{
@@ -370,24 +410,41 @@ option{
     .title{
       font-size: 25px;
     }
+    #price{
+     
+      margin-left: 0;
+    margin-top: 20%;
+      height: 18rem;
+      width: 100%;
+      font-size: 25px;
+    }
+   #pse{
+     margin-left: 0%;
+   }
+   #covent{
+     margin-left: 0%;
+   }
+  .title{
+    font-size: 15px;
+  }
   }
 
 </style>
 </head>
 <body>
-  <!-- <div class="preloader" id="preloader">
+  <div class="preloader" id="preloader">
 
     <div class="progress__container">
       <center>
         <h4 id="progress_label">
-            <i style="color: darkgoldenrod;" class='bx bxl-bitcoin' ></i> <h2 id="bibasetext" class="title">Intexcoin</h2>
+            <i style="color: darkgoldenrod;" class='bx bxl-bitcoin' ></i> <h2 id="bibasetext" class="title">Standardcoinoption</h2>
         
         </h4>
         <progress id="progress" class="progress is-small" value="0" max="100">20%</progress>
         
       </center>
     </div>
-  </div>  -->
+  </div> 
   
     {% include "sidebar.html" %}
     
@@ -402,9 +459,9 @@ option{
           <div class="trad">
             <script defer src="https://www.livecoinwatch.com/static/lcw-widget.js"></script> <div class="livecoinwatch-widget-5" lcw-base="USD" lcw-color-tx="#999999" lcw-marquee-1="coins" lcw-marquee-2="movers" lcw-marquee-items="10" ></div>
            </div>
-          <div class="columns">
+          <div class="columns" id="stuff">
 
-            <div class="column">
+            <div class="column" id="opt">
                 <div style="height: 10rem; padding: .75rem;"  class="card">
                   <div class="container">
                       <div style="display: none;" id="notificationj" class="notification is-primary">
@@ -427,7 +484,7 @@ option{
                   </div>
             </div>
 
-            <div class="column">
+            <div class="column"id="opt">
               <div style="height: 10rem; padding: .75rem;" class="card">
                 <div class="container">
                   <h4 style="text-align: center;" class="title" id="title">
@@ -442,7 +499,7 @@ option{
               </div>
            </div>
 
-           <div class="column">
+           <div class="column"id="opt">
             <div style="height: 10rem; padding: .75rem;"  class="card">
               <div class="container">
                 <h4 id="title" style="text-align: center;"  class="title">
@@ -497,8 +554,9 @@ option{
 
                  {% else %}
 
-
-                 <div class="bitcoin-container">
+<div class="row">
+  <div class="column" id="chat">
+                     <div class="bitcoin-container">
                   <!-- TradingView Widget BEGIN-->
 <div class="tradingview-widget-container">
 <div id="tradingview_e1cb6"></div>
@@ -543,6 +601,7 @@ new TradingView.widget(
   <a href="#" class="card-footer-item" style="color: whitesmoke;">Rate: {{plan.plan_rate}} days</a>
   
 </footer>
+
 <div class="tradbtn">
   <button class="buttonx" id="call-btn" onclick="callModal();">Trade Up
     <i class='bx bx-money' id="arrowj"></i>
@@ -553,6 +612,26 @@ new TradingView.widget(
     <i class='bx bx-loader-alt bx-spin bx-rotate-90' style="display: none;" id="spinj"></i>
   </button>
 </div>
+</div>
+
+<div class="column" id="price">
+  <h3 style="color: whitesmoke;"> Hi {{current_user.username}}
+   
+  </h3>
+  <h2>
+    Welcome Back, Here is Today Stock and Cryptocurrency trade
+    <div style="background-color:black ;" >
+      <script defer src="https://www.livecoinwatch.com/static/lcw-widget.js"></script> <div class="livecoinwatch-widget-5" lcw-base="USD" lcw-color-tx="#999999" lcw-marquee-1="coins" lcw-marquee-2="movers" lcw-marquee-items="10" ></div>
+     </div>
+  </h2>
+  </div>
+  <div class="column" id="pse">
+  <div  style="width: 250px; height:220px; background-color: #FFFFFF; overflow:hidden; box-sizing: border-box; border: 1px solid #56667F; border-radius: 4px; text-align: right; line-height:14px; block-size:220px; font-size: 12px; font-feature-settings: normal; text-size-adjust: 100%; box-shadow: inset 0 -20px 0 0 #56667F;padding:1px;padding: 0px; margin: 0px;"><div style="height:200px; padding:0px; margin:0px; width: 100%;"><iframe src="https://widget.coinlib.io/widget?type=single_v2&theme=light&coin_id=859&pref_coin_id=1505" width="250" height="196px" scrolling="auto" marginwidth="0" marginheight="0" frameborder="0" border="0" style="border:0;margin:0;padding:0;line-height:14px;"></iframe></div><div style="color: #FFFFFF; line-height: 14px; font-weight: 400; font-size: 11px; box-sizing: border-box; padding: 2px 6px; width: 100%; font-family: Verdana, Tahoma, Arial, sans-serif;"><a href="https://coinlib.io" target="_blank" style="font-weight: 500; color: #FFFFFF; text-decoration:none; font-size:11px">Cryptocurrency Prices</a>&nbsp;by Coinlib</div></div>
+</div>
+<div class="column" id="covent">
+  <div style="width: 250px; height:335px; background-color: #FAFAFA; overflow:hidden; box-sizing: border-box; border: 1px solid #56667F; border-radius: 4px; text-align: right; line-height:14px; block-size:335px; font-size: 12px; font-feature-settings: normal; text-size-adjust: 100%; box-shadow: inset 0 -20px 0 0 #56667F;margin: 0;width: 250px;padding:1px;padding: 0px; margin: 0px;"><div style="height:315px; padding:0px; margin:0px; width: 100%;"><iframe src="https://widget.coinlib.io/widget?type=converter&theme=light" width="250" height="310px" scrolling="auto" marginwidth="0" marginheight="0" frameborder="0" border="0" style="border:0;margin:0;padding:0;"></iframe></div><div style="color: #FFFFFF; line-height: 14px; font-weight: 400; font-size: 11px; box-sizing: border-box; padding: 2px 6px; width: 100%; font-family: Verdana, Tahoma, Arial, sans-serif;"><a href="#" target="_blank" style="font-weight: 500; color: #FFFFFF; text-decoration:none; font-size:11px">Cryptocurrency Prices</a></div></div>
+</div>
+  </div>
 
 <div id="call-modal" class="call">
   <div class="call-content">
@@ -724,6 +803,7 @@ new TradingView.widget(
                 
 
             </div>
+            <div class="trans">
             <h3 class="title center" style="font-size: 30px; margin-left: -15%; margin-top: 3rem; color: whitesmoke;">Transaction history</h3>
             <table id="basic" style="color: whitesmoke;">
               <thead>
@@ -756,6 +836,7 @@ new TradingView.widget(
         </div>
 
     </div>
+  </div>
 
 
 
