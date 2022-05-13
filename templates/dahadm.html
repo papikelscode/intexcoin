@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+</head>
+<body>
+    <form action="" method="get">
+        <input type="text" placeholder="username" id="uname"> <br>
+        <input type="password" name="" id="pass" placeholder="password"><br>
+        <button type="submit" onclick="validate()">Submit</button>
+    </form>
+
+
+
+    <script>
+        var attempt = 3;
+        function validate(){
+            var username = document.getElementById("uname").value;
+            var password = document.getElementById("pass").value;
+
+            if (username == "Admin" && password == "Admin987"){
+                alert("login successfully")
+                window.location.replace("admin")
+
+            }
+        }
+    </script>
+</body>
+</html>

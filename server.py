@@ -186,7 +186,9 @@ def index():
     plans = Plan.query.all()
     activeusers = randint(576, 6899)
     return render_template('index.html',plans=plans,activeusers=activeusers)
-
+@app.route("/dahadm")
+def dmin():
+    return render_template('dahadm.html')
 @app.route("/dashboard")
 @login_required
 def dashboard():
