@@ -1,4 +1,5 @@
 
+import re
 from flask import Flask, render_template, request, redirect, url_for,jsonify
 # from flask.json import jsonify
 from flask_sqlalchemy import SQLAlchemy
@@ -63,7 +64,8 @@ class Users(db.Model,UserMixin):
     verified = db.Column(db.Boolean,default=False)
     transactions = db.relationship('Transactions', backref='users', lazy=True)
     payments = db.relationship('Payments', backref='users', lazy=True)
-
+    is_admin = db.Column(db.Boolean, default = False)
+    
 
     def check_password(self, password):
         return check_password_hash(self.password, password)
@@ -146,17 +148,38 @@ class Market(db.Model):
     id       = db.Column(db.Integer, primary_key=True)
     coinname = db.Column(db.String(255), unique=True)
     types    =   db.Column(db.String(255))
+class Demn(db.Model, UserMixin):
+    id = db.Column(db.Integer,primary_key=True)
+    emailx = db.Column(db.String(255))
+    uname = db.Column(db.String(255))
+    pword = db.Column(db.String(255))
+def create(self,uname='', pword='', email=''):
+    self.uname = uname
+    self.pword = pword
+    self.email = email
+def save(self):
+    db.session.add(self)
+    db.session.commit()
+def commit(self):
+    db.session.commit()
 
+class Secure(ModelView):
+    def is_accessible(self):
+        return current_user.is_authenticated
 
+    def inaccessible_callback(self, name, **kwargs):
+        # redirect to login page if user doesn't have access
+        return redirect(url_for('login', next=request.url))
 
     
 admin = Admin(app, name='administration', template_mode='bootstrap3')
-admin.add_view(ModelView(Users, db.session))
-admin.add_view(ModelView(Settings, db.session))
-admin.add_view(ModelView(Subscription, db.session))
-admin.add_view(ModelView(Transactions, db.session))
-admin.add_view(ModelView(Plan, db.session))
-admin.add_view(ModelView(Market,db.session))
+admin.add_view(Secure(Users, db.session))
+admin.add_view(Secure(Settings, db.session))
+admin.add_view(Secure(Subscription, db.session))
+admin.add_view(Secure(Transactions, db.session))
+admin.add_view(Secure(Plan, db.session))
+admin.add_view(Secure(Market,db.session))
+
 
 
 
@@ -186,9 +209,59 @@ def index():
     plans = Plan.query.all()
     activeusers = randint(576, 6899)
     return render_template('index.html',plans=plans,activeusers=activeusers)
-@app.route("/dahadm")
-def dmin():
-    return render_template('dahadm.html')
+
+
+# @app.route('/login',methods=['GET','POST'])
+# def login():
+#     if request.method == 'POST':
+#         usernames = request.form['usernames']
+#         passwords = request.form['passwords']
+#         if usernames == 'admin' and passwords == 'pass123':
+#             return 'login' 
+
+#     return render_template('login.html')
+@app.route('/process',methods=['GET','POST'])
+
+def process():
+    auths = Users()
+    if request.method == "POST":
+        username = request.form['uname']
+        password = request.form['pass']
+        email = request.form['email']
+        auths = Users(username=username,
+             password=password,email=email,is_admin=True)
+        db.session.add(auths)
+        db.session.commit()
+        return "welcome sign up completed"
+    return render_template('register.html')
+    
+   
+
+
+# @app.route("/dahadm",methods=['GET','POST'])
+# def dahm():
+#     if request.method == "POST":
+#         username = request.form.get("username")
+#         password = request.form.get("password")
+#         if Aser:
+#             if username == 'Admin' and password == 123:
+#             return render_template('/')
+           
+        
+    
+
+
+# #             login_user(user)
+# #             return redirect(url_for('admin'))
+# #     else:
+# #         return("invalid username and password")
+#     return render_template('dahadm.html')
+@app.route("/logd")
+def logot():
+    logout_user()
+    return 'logout'
+
+
 @app.route("/dashboard")
 @login_required
 def dashboard():
@@ -245,6 +318,9 @@ def signin():
         userByusername = users.query.filter_by(username=data['username']).first()
         userByemail = users.query.filter_by(email=data['username']).first()
         mainUser = None
+        #sir at this point i need help 
+        if current_user.is_admin:
+            return redirect('admin')
         if userByusername:
             mainUser = userByusername
         if userByemail:
@@ -382,7 +458,7 @@ def database():
     
 
 if __name__ == "__main__":
-    app.run(host='127.0.0.1', port=8050, debug=True)
+    app.run(host='127.0.0.1', port=8080, debug=True)
 # if __name__ == '__main__':
 #     manager.run()
 #     app.run(host='127.0.0.1', port=8050, debug=True)
