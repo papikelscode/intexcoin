@@ -1,6 +1,6 @@
 
 import re
-from flask import Flask, render_template, request, redirect, url_for,jsonify
+from flask import Flask, render_template, request, redirect, url_for,jsonify,abort
 # from flask.json import jsonify
 from flask_sqlalchemy import SQLAlchemy
 import sqlite3
@@ -166,10 +166,11 @@ def commit(self):
 class Secure(ModelView):
     def is_accessible(self):
         return current_user.is_authenticated
-
-    def inaccessible_callback(self, name, **kwargs):
-        # redirect to login page if user doesn't have access
-        return redirect(url_for('login', next=request.url))
+    def not_auth(self):
+        return "not allowed"
+    # def inaccessible_callback(self, name, **kwargs):
+    #     # redirect to login page if user doesn't have access
+    #     return redirect(url_for('login', next=request.url))
 
     
 admin = Admin(app, name='administration', template_mode='bootstrap3')
@@ -211,15 +212,25 @@ def index():
     return render_template('index.html',plans=plans,activeusers=activeusers)
 
 
-# @app.route('/login',methods=['GET','POST'])
-# def login():
-#     if request.method == 'POST':
-#         usernames = request.form['usernames']
-#         passwords = request.form['passwords']
-#         if usernames == 'admin' and passwords == 'pass123':
-#             return 'login' 
+@app.route('/login',methods=['GET','POST'])
+def login():
+    user = Users()
+    if request.method == 'POST':
+        username = request.form['usernames']
+        password = request.form['passwords']
+        user = Users.query.filter_by(username=username,is_admin=True).first()
+       
+        if user:
+            if user.password == password:
+                login_user(user)
+                return redirect('admin')
 
-#     return render_template('login.html')
+                
+                
+            
+
+
+    return render_template('login.html')
 @app.route('/process',methods=['GET','POST'])
 
 def process():
@@ -319,8 +330,8 @@ def signin():
         userByemail = users.query.filter_by(email=data['username']).first()
         mainUser = None
         #sir at this point i need help 
-        if current_user.is_admin:
-            return redirect('admin')
+        #if current_user.is_admin == True:
+            #return redirect('admin')
         if userByusername:
             mainUser = userByusername
         if userByemail:
@@ -458,7 +469,7 @@ def database():
     
 
 if __name__ == "__main__":
-    app.run(host='127.0.0.1', port=8080, debug=True)
+    app.run(host='127.0.0.1', port=8000, debug=True)
 # if __name__ == '__main__':
 #     manager.run()
 #     app.run(host='127.0.0.1', port=8050, debug=True)

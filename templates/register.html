@@ -48,13 +48,18 @@
         <h1>
             Welcome to sign up page
         </h1>
+
     <div class="card">
 <form action="{{url_for('process')}}" method="POST">
     <input type="text" placeholder="Enter username" name="uname"> <br>
     <input type="password" placeholder="password" name="pass"> <br>
     <input type="email" name="email" id="" >
     <input type="submit" value="sign up">
-</form>
+    <br>
+        <a href="login">login</a>
+    
+   </form>
+
 </div>
 </center>
 
